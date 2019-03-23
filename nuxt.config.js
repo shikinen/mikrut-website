@@ -27,6 +27,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/scss/_main.scss'
   ],
 
   /*
@@ -44,6 +45,16 @@ export default {
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma'
   ],
+
+  /*
+  ** Style resources module configuration
+  */
+  styleResources: {
+    scss: [
+      '@/assets/sass/_vars.scss',
+      '@/assets/sass/_mixins.scss'
+    ]
+  },
   /*
   ** Axios module configuration
   */
