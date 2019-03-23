@@ -26,7 +26,7 @@
 
 @mixin reset-link {
   text-decoration: none;
-  color: inherit;
+  color: currentColor;
 }
 
 @mixin center-content {
@@ -102,8 +102,8 @@ $breakpoints: (
 }
 
 @mixin main-container {
-  max-width: 1128px;
+  max-width: 968px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
 }

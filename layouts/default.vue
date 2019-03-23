@@ -1,9 +1,17 @@
 <template>
   <div>
-    <nuxt />
+    <main>
+      <nuxt/>
+    </main>
+    <footer-component/>
   </div>
 </template>
 
-<style>
-
-</style>
+<script>
+import FooterComponent from '@/components/base/footer'
+export default {
+  components: {
+    FooterComponent
+  }
+}
+</script>

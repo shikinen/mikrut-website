@@ -1,5 +1,9 @@
 <template>
-  <h1>lol</h1>
+  <div>
+    <h1>lol</h1>
+    <lol-div/>
+    <logo/>
+  </div>
 </template>
 
 <script>
