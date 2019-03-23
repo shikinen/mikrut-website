@@ -29,6 +29,27 @@
   color: currentColor;
 }
 
+@mixin text-link {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: $base-transition;
+    background-color: currentColor;
+  }
+  &:hover {
+    &::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+}
+
 @mixin center-content {
   display: flex;
   align-items: center;
@@ -38,8 +59,7 @@
 $breakpoints: (
   sm: 576px,
   md: 768px,
-  lg: 1170px,
-  xlg: 1440px
+  lg: 968px
 );
 
 @mixin media($breakpoint: null, $is-mobile-first: true, $width: null) {
@@ -102,8 +122,8 @@ $breakpoints: (
 }
 
 @mixin main-container {
-  max-width: 968px;
+  max-width: 1016px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 $container-padding;
 }
