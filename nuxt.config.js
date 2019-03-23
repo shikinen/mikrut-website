@@ -39,6 +39,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/globalComponents'
   ],
 
   /*
@@ -46,7 +47,8 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
 
   /*
@@ -54,8 +56,8 @@ export default {
   */
   styleResources: {
     scss: [
-      '@/assets/sass/_variables.scss',
-      '@/assets/sass/_mixins.scss'
+      '@/assets/scss/_variables.scss',
+      '@/assets/scss/_mixins.scss'
     ]
   },
   /*
