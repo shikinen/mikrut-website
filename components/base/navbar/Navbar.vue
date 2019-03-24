@@ -2,15 +2,18 @@
   <header :class="{ 'header--scrolled': scrollPosition > 20 }" class="header">
     <logo class="header__logo"/>
     <navigation/>
+    <menu-component class="header__menu"/>
   </header>
 </template>
 
 <script>
 import Navigation from '@/components/base/navbar/Navigation'
+import MenuComponent from '@/components/base/navbar/Menu'
 
 export default {
   components: {
-    Navigation
+    Navigation,
+    MenuComponent
   },
   data () {
     return {
@@ -35,7 +38,8 @@ export default {
   .header {
     position: fixed;
     width: 100%;
-    padding: 24px 40px;
+    padding: 0 40px;
+    height: 96px;
 
     transition: $base-transition;
     &--scrolled {
@@ -47,6 +51,12 @@ export default {
 
     &__logo {
       margin-right: 144px;
+    }
+
+    &__menu {
+      position: absolute;
+      top: 100%;
+      left: 230px;
     }
   }
 </style>

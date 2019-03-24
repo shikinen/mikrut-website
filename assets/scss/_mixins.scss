@@ -27,9 +27,33 @@
 @mixin reset-link {
   text-decoration: none;
   color: currentColor;
+  transition: $base-transition;
+}
+
+@mixin reset-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
+@mixin accent-link {
+  &:hover {
+    color: $accent-color
+  }
 }
 
 @mixin text-link {
+  cursor: pointer;
+  position: relative;
   &::before {
     content: '';
     position: absolute;
@@ -126,4 +150,15 @@ $breakpoints: (
   width: 100%;
   margin: 0 auto;
   padding: 0 $container-padding;
+}
+
+@mixin paragraph-font {
+  font-size: $paragraph-font-size;
+  font-weight: $paragraph-font-weight;
+  line-height: $paragraph-line-height;
+}
+
+@mixin subtitle-font {
+  font-size: $subtitle-font-size;
+  font-weight: $subtitle-font-weight;
 }

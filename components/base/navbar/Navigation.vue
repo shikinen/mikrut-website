@@ -1,10 +1,10 @@
 <template>
   <nav class="navigation">
     <ul class="navigation__list">
-      <li class="navigation__item">
-        <a class="text-link" href="">
+      <li class="navigation__item ">
+        <span :class="{ 'services--active': isMenuVisible }" class="services" @mouseover="$store.commit('toggleMenu', true)">
           Usługi
-        </a>
+        </span>
       </li>
       <li class="navigation__item">
         <a class="text-link" href="">
@@ -32,8 +32,10 @@
 </template>
 
 <script>
-export default {
+import { mapState } from 'vuex'
 
+export default {
+  computed: mapState(['isMenuVisible'])
 }
 </script>
 
@@ -65,6 +67,31 @@ export default {
         .navigation__phone:hover & {
           animation: phone 2s linear infinite;
         }
+      }
+    }
+  }
+
+  .services {
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -8px;
+      left: 0;
+
+      visibility: hidden;
+      transform: scaleX(0);
+      background-color: currentColor;
+      transition: $base-transition;
+    }
+
+    &--active {
+      &::before {
+        visibility: visible;
+        transform: scaleX(1);
       }
     }
   }

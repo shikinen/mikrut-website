@@ -1,15 +1,37 @@
 body {
   font-family: 'Gilroy', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: $paragraph-font-weight;
+  font-size: $paragraph-font-size;
   line-height: 1;
   color: $secondary-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  @include reset-link;
+  position: relative;
+}
+
+.text-link {
+  @include text-link;
+}
+
+.accent-link {
+  @include accent-link;
+}
+
+
 h1 {
   font-size: 96px;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.paragraph {
+  @include paragraph-font;
+}
+
+.subtitle {
+  @include subtitle-font;
 }
