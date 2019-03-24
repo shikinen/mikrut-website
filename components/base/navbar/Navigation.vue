@@ -2,7 +2,7 @@
   <nav class="navigation">
     <ul class="navigation__list">
       <li class="navigation__item ">
-        <span :class="{ 'services--active': isMenuVisible }" class="services" @mouseover="$store.commit('toggleMenu', true)">
+        <span :class="{ 'services--active': isMenuVisible }" class="services" @mouseover="$store.commit('openMenu')">
           Usługi
         </span>
       </li>

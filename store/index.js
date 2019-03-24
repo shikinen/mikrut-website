@@ -3,11 +3,13 @@ const state = () => ({
 })
 
 const mutations = {
-  toggleMenu (state, flag) {
-    state.isMenuVisible = flag
+  openMenu (state) {
+    state.isMenuVisible = true
+  },
+  closeMenu (state) {
+    state.isMenuVisible = false
   }
 }
-
 
 export default {
   state,

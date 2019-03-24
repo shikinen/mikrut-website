@@ -1,6 +1,6 @@
 <template>
   <transition name="fade" mode="out-in">
-    <div v-if="isMenuVisible" class="menu" @mouseleave="$store.commit('toggleMenu', false)">
+    <div v-if="isMenuVisible" class="menu" @mouseleave="$store.commit('closeMenu')">
       <div class="info">
         <h4 class="title">
           Usługi detektywa

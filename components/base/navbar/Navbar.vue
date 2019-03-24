@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ 'header--scrolled': scrollPosition > 20 }" class="header">
+  <header :class="{ 'header--scrolled': scrollPosition > 20 }" class="header" @mouseleave="$store.commit('closeMenu')">
     <logo class="header__logo"/>
     <navigation/>
     <menu-component class="header__menu"/>
