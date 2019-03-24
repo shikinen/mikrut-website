@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <h1>lol</h1>
-    <lol-div/>
-    <logo/>
-  </div>
+  <main>
+    lol
+  </main>
 </template>
 
 <script>
@@ -15,5 +13,8 @@ export default {
 </script>
 
 <style>
+main {
+  height: 70vh;
+}
 
 </style>
