@@ -2,16 +2,24 @@
   <nav class="navigation">
     <ul class="navigation__list">
       <li class="navigation__item">
-        Usługi
+        <a class="text-link" href="">
+          Usługi
+        </a>
       </li>
       <li class="navigation__item">
-        Blog
+        <a class="text-link" href="">
+          Blog
+        </a>
       </li>
       <li class="navigation__item">
-        O detektywie
+        <a class="text-link" href="">
+          O detektywie
+        </a>
       </li>
       <li class="navigation__item">
-        Kontakt
+        <a class="text-link" href="">
+          Kontakt
+        </a>
       </li>
     </ul>
     <p class="navigation__phone">
@@ -37,6 +45,7 @@ export default {
     letter-spacing: 1.4px;
     text-transform: uppercase;
     display: flex;
+    align-items: center;
 
     &__item {
       display: inline-block;
@@ -52,6 +61,10 @@ export default {
 
       &--icon {
         margin-right: 16px;
+
+        .navigation__phone:hover & {
+          animation: phone 2s linear infinite;
+        }
       }
     }
   }
