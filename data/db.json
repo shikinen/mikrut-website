@@ -1,0 +1,22 @@
+{
+  "services": [
+    {
+      "title": "Obserwacja"
+    },
+    {
+      "title": "Kontrobserwacja"
+    },
+    {
+      "title": "Wykrywanie urządzeń"
+    },
+    {
+      "title": "Ustalenia detektywistyczne"
+    },
+    {
+      "title": "Inne"
+    },
+    {
+      "title": "Obszar operacyjny"
+    }
+  ]
+}
