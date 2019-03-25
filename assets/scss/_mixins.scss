@@ -7,7 +7,8 @@
   padding: 0;
 }
 
-@mixin reset-button {
+@mixin base-button {
+  display: inline-block;
   overflow: visible;
   margin: 0;
   padding: 0;
@@ -22,6 +23,9 @@
     padding: 0;
     border: 0;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 @mixin reset-link {
@@ -30,19 +34,18 @@
   transition: $base-transition;
 }
 
-@mixin reset-button {
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  overflow: visible;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-  -webkit-appearance: none;
+@mixin reset-input {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+	background: none;
+	line-height: 1;
+  &:focus {
+    outline: 0;
+  }
 }
 
 @mixin accent-link {
@@ -161,4 +164,30 @@ $breakpoints: (
 @mixin subtitle-font {
   font-size: $subtitle-font-size;
   font-weight: $subtitle-font-weight;
+}
+
+@mixin subtitle-font-medium {
+  font-size: $subtitle-font-size;
+  font-weight: 500;
+}
+
+@mixin subtitle-font-semibold {
+  font-size: $subtitle-font-size;
+  font-weight: 600;
+}
+
+@mixin form-field {
+  padding: 16px 24px;
+  border: .5px solid $gray;
+  &, &::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    color: $primary-color;
+    transition: $base-transition;
+  }
+  &:focus {
+    &::placeholder {
+      opacity: .2;
+    }
+  }
 }
