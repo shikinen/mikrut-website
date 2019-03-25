@@ -2,6 +2,14 @@
 $primary-color: #000;
 $secondary-color: #fff;
 $accent-color: #FF163D;
+$accent-darker-color: darken($accent-color, 7%);
+$gray: #cfcfcf;
+
+// SHADOWS
+$accent-shadow: 0 10px 20px 0 $accent-color;
+$accent-shadow-small: 0 5px 18px 0 $accent-color;
+$primary-shadow: 0 10px 20px 0 lighten($primary-color, 50%);
+$primary-shadow-small: 0 5px 18px 0 lighten($primary-color, 50%);
 
 // TRANSITIONS
 $base-transition: all .2s ease-in-out;
@@ -9,7 +17,7 @@ $base-transition: all .2s ease-in-out;
 // LAYOUT
 $container-padding: 24px;
 
-//TYPOGRAPHY
+// TYPOGRAPHY
 $paragraph-font-size: 16px;
 $paragraph-font-weight: 400;
 $paragraph-line-height: 1.619;

@@ -1,19 +1,22 @@
 <template>
-  <main>
-    lol
+  <main class="main">
+    <contact/>
   </main>
 </template>
 
 <script>
+import Contact from '@/components/contact/Contact'
 
 export default {
-
+  components: {
+    Contact
+  }
 }
 </script>
 
-<style>
-main {
-  height: 70vh;
-}
+<style lang="scss" scoped>
+  main {
+    height: 70vh;
+  }
 
 </style>

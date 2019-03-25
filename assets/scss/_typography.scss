@@ -35,3 +35,11 @@ h1 {
 .subtitle {
   @include subtitle-font;
 }
+
+.subtitle-medium {
+  @include subtitle-font-medium;
+}
+
+.subtitle-semibold {
+  @include subtitle-font-semibold;
+}
