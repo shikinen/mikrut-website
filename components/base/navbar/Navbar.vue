@@ -37,6 +37,8 @@ export default {
 <style lang="scss" scoped>
   .header {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 0 40px;
     height: 96px;
