@@ -28,36 +28,19 @@
         </nuxt-link>
       </li>
     </ul>
-    <div class="info">
-      <span>
-        detektyw
-      </span>
-      <hr class="info__line">
-      <h4 class="info__text">
-        Kamil Mikrut
-      </h4>
-      <span>
-        koncesja MSWiA
-      </span>
-      <hr class="info__line">
-      <h4>
-        RD-19/2016
-      </h4>
-      <span>
-        nr licencji
-      </span>
-      <hr class="info__line">
-      <h4>
-        0001899
-      </h4>
-    </div>
+    <info all/>
     <social all boxed/>
     <small class="copy">{{ `&copy; ${ currentYear }, Kamil Mikrut ` }}</small>
   </footer>
 </template>
 
 <script>
+import Info from '@/components/base/Info'
+
 export default {
+  components: {
+    Info
+  },
   data () {
     return {
       currentYear: new Date().getFullYear()
@@ -95,16 +78,6 @@ export default {
       &:not(:last-child) {
         margin-bottom: 32px;
       }
-    }
-  }
-
-  .info {
-    display: grid;
-    grid-template-rows: repeat(3, min-content);
-    grid-template-columns: max-content 48px max-content;
-    grid-gap: 32px;
-    &__line {
-      align-self: center;
     }
   }
 

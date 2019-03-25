@@ -8,6 +8,7 @@ $gray: #cfcfcf;
 // SHADOWS
 $accent-shadow: 0 10px 20px 0 $accent-color;
 $accent-shadow-small: 0 5px 18px 0 $accent-color;
+$accent-shadow-blurred: 0 10px 20px 0 rgba($accent-color, .4);
 $primary-shadow: 0 10px 20px 0 lighten($primary-color, 50%);
 $primary-shadow-small: 0 5px 18px 0 lighten($primary-color, 50%);
 
@@ -24,4 +25,5 @@ $paragraph-line-height: 1.619;
 
 $subtitle-font-size: 24px;
 $subtitle-font-weight: 700;
+$subtitle-line-height: 1.35;
 

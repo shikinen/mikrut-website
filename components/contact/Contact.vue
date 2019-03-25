@@ -24,10 +24,7 @@ export default {
 
 <style lang="scss" scoped>
   .container {
-    max-width: 1136px;
     padding: 96px 96px 80px;
-    margin: 0 auto;
-    margin-top: 500px;
     background: $secondary-color;
     color: $primary-color;
 
