@@ -1,11 +1,11 @@
 <template>
   <div class="button__wrapper">
-    <span v-if="phone" class="button__phone">Zadzwoń</span>
+    <span v-if="phone || phoneBig" :class="{ 'bigger-font': phoneBig }" class="button__phone">{{ phoneBig ? '+48' : 'Zadzwoń' }}</span>
     <a
-      :class="{ 'button--small': small, 'button--phone': phone }"
+      :class="{ 'button--small': small, 'button--phone': phone, 'button--inline': inline, 'bigger-font': phoneBig }"
       class="button"
     >
-      {{ phone ? '+48 519 734 926' : text }}
+      {{ phoneBig ? '519 734 926' : phone ? '+48 519 734 926' : text }}
     </a>
     <svg
       width="24px"
@@ -49,9 +49,13 @@ export default {
   props: {
     text: {
       type: String,
-      required: true
+      default: ''
     },
     phone: {
+      type: Boolean,
+      default: false
+    },
+    phoneBig: {
       type: Boolean,
       default: false
     },
@@ -60,6 +64,10 @@ export default {
       default: false
     },
     black: {
+      type: Boolean,
+      default: false
+    },
+    inline: {
       type: Boolean,
       default: false
     }
@@ -71,7 +79,7 @@ export default {
   .button {
     @include base-button;
     background-color: $accent-color;
-    box-shadow: $accent-shadow;
+    box-shadow: $accent-shadow-blurred;
     color: $secondary-color;
     padding: 16px 8px;
 
@@ -83,14 +91,11 @@ export default {
     }
 
     &:hover {
-      background-color: black;
-      box-shadow: $primary-shadow;
       + svg {
         transform: translateX(8px);
       }
     }
     &:active {
-      box-shadow: $primary-shadow-small;
       transform: scale(.98);
     }
 
@@ -102,11 +107,31 @@ export default {
       font-size: 16px;
     }
 
+    &--inline {
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      @include text-link;
+      &:hover {
+        box-shadow: none;
+        transform: none;
+      }
+    }
+
     &__arrow {
       stroke: #fff;
 
       &--black {
         stroke: #000;
+
+        &:active {
+          box-shadow: $primary-shadow-small;
+        }
+
+        &:hover {
+          background-color: black;
+          box-shadow: $primary-shadow;
+        }
       }
     }
 
@@ -115,5 +140,9 @@ export default {
       text-transform: uppercase;
       margin-right: 8px;
     }
+}
+
+.bigger-font {
+  font-size: 24px;
 }
 </style>
