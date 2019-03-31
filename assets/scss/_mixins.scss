@@ -164,6 +164,7 @@ $breakpoints: (
 @mixin subtitle-font {
   font-size: $subtitle-font-size;
   font-weight: $subtitle-font-weight;
+  line-height: $subtitle-line-height;
 }
 
 @mixin subtitle-font-medium {
@@ -175,6 +176,7 @@ $breakpoints: (
 @mixin subtitle-font-semibold {
   font-size: $subtitle-font-size;
   font-weight: 600;
+  line-height: $subtitle-line-height;
 }
 
 @mixin form-field {
@@ -191,4 +193,12 @@ $breakpoints: (
       opacity: .2;
     }
   }
+}
+
+@mixin coverer {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

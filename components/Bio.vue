@@ -1,17 +1,17 @@
 <template>
   <section class="bio">
     <div>
-      <section-title title="Kamil Mikrut" underline/>
+      <section-title title="Kamil Mikrut" underline left/>
       <p class="bio__text subtitle-medium">
         {{ bio }}
       </p>
       <info concession license/>
     </div>
     <img
-      srcset="/img/bio-1x.jpg 1x,
+      v-lazy="'/img/bio-1x.jpg'"
+      data-srcset="/img/bio-1x.jpg 1x,
               /img/bio-2x.jpg 2x,
               /img/bio-3x.jpg 3x"
-      src="/img/bio-1x.jpg"
       class="bio__img"
     >
   </section>
@@ -39,7 +39,6 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 16px;
-    &__content {}
 
     &__text {
       margin-top: 96px;

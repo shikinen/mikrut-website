@@ -3,7 +3,7 @@
     <div class="info">
       <section-title title="Kontakt"/>
       <h4 class="subtitle-semibold">
-        Skontaktuj się z detektywem całkowicie anonimowo i bezpiecznie.
+        Skontaktuj się z detektywem<br>całkowicie anonimowo i bezpiecznie.
       </h4>
       <base-button class="info__button" phone black/>
     </div>

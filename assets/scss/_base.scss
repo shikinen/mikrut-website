@@ -8,8 +8,13 @@
 
 html, body {
   background: $primary-color;
+  height: 100vh;
 }
 
 body {
   box-sizing: border-box;
+}
+
+::selection{
+  background: $accent-color;
 }

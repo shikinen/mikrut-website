@@ -8,6 +8,9 @@ export default {
   */
   head: {
     title: pkg.name,
+    htmlAttrs: {
+      lang: 'pl-PL',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,6 +23,9 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '128x128', href: '/favicon-128.png' },
       { rel: 'icon', type: 'image/png', sizes: '196x196', href: '/favicon-196x196.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
+    src: [
+      { href: "https://unpkg.com/vue-bulma-accordion" }
     ]
   },
 
@@ -39,7 +45,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/globalComponents'
+    '~plugins/global-components',
+    '~plugins/vue-lazyload',
+    { src: '~/plugins/accordion', ssr: false }
   ],
 
   /*
