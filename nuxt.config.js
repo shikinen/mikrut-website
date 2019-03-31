@@ -8,14 +8,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Detektyw Kamil Mikrut – usługi detektywistyczne',
     htmlAttrs: {
       lang: 'pl-PL',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'Nadzwyczajna skuteczność działań detektywistycznych. Obsługa osób fizycznych i firm. Ustalenie ojcostwa, poszukiwania dzieci, pzyskiwanie dowodów, zdrady' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
@@ -47,8 +47,7 @@ export default {
   */
   plugins: [
     '~plugins/global-components',
-    '~plugins/vue-lazyload',
-    { src: '~/plugins/accordion', ssr: false }
+    '~plugins/vue-lazyload'
   ],
 
   /*
