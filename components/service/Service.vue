@@ -6,12 +6,11 @@
         :left="left"
         class="service__title"
         underline
-        right
       />
       <p v-if="text" class="subtitle-medium">
         {{ text }}
       </p>
-      <accordion v-else :items="items" :left="left"/>
+      <accordion v-else :content="items" :left="left"/>
     </div>
     <img
       v-lazy="'/img/observation-1x.jpg'"

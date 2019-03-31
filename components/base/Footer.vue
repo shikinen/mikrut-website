@@ -10,7 +10,7 @@
     </ul>
     <info all/>
     <social all boxed/>
-    <small class="copy">{{ `&copy; ${ currentYear }, Kamil Mikrut` }}</small>
+    <small class="copy">{{ `&copy; ${currentYear}, Kamil Mikrut` }}</small>
   </footer>
 </template>
 
@@ -36,20 +36,22 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
   .footer {
     @include main-container;
-    padding-top: 32px;
-    padding-bottom: 160px;
-    display: flex;
-    justify-content: space-between;
 
-    @include media-down(md) {
-      flex-direction: column;
-      padding-bottom: 96px;
+    padding-top: 32px;
+    padding-bottom: 96px;
+    & > *:not(:last-child) {
+      margin-bottom: 64px;
+    }
+
+    @include media-up(md) {
+      display: flex;
+      padding-bottom: 160px;
+      justify-content: space-between;
       & > *:not(:last-child) {
-        margin-bottom: 64px;
+        margin-bottom: 0;
       }
     }
 
@@ -75,11 +77,11 @@ export default {
     position: absolute;
     margin-bottom: 16px;
     bottom: 0;
-    right: $container-padding;
+    left: $container-padding;
 
-    @include media-down(md) {
-      right: unset;
-      left: $container-padding;
+    @include media-up(md) {
+      left: unset;
+      right: $container-padding;
     }
   }
 </style>

@@ -45,7 +45,10 @@ export default {
     &__item {
       display: inline-block;
       &:not(:last-child) {
-        margin-right: 80px;
+        margin-right: 48px;
+        @include media-up(xlg) {
+          margin-right: 80px;
+        }
       }
     }
 

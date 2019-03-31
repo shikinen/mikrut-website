@@ -20,6 +20,7 @@
 <script>
 import Info from '@/components/base/Info'
 import SectionTitle from '@/components/base/SectionTitle'
+
 export default {
   components: {
     SectionTitle,
