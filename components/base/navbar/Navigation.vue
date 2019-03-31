@@ -1,31 +1,24 @@
 <template>
   <nav class="navigation">
     <ul class="navigation__list">
-      <li class="navigation__item ">
-        <span :class="{ 'services--active': isMenuVisible }" class="services" @mouseover="$store.commit('openMenu')">
-          Usługi
+      <li v-for="item in $t('navigation')" :key="item" class="navigation__item">
+        <span
+          v-if="item.submenu"
+          :class="{ 'services--active': isMenuVisible }"
+          class="services"
+          @mouseover="$store.commit('openMenu')"
+        >
+          {{ item.title }}
         </span>
-      </li>
-      <li class="navigation__item">
-        <a class="text-link" href="">
-          Blog
-        </a>
-      </li>
-      <li class="navigation__item">
-        <a class="text-link" href="">
-          O detektywie
-        </a>
-      </li>
-      <li class="navigation__item">
-        <a class="text-link" href="">
-          Kontakt
+        <a v-else class="text-link" href="">
+          {{ item.title }}
         </a>
       </li>
     </ul>
     <p class="navigation__phone">
       <img class="navigation__phone--icon" src="/img/phone.svg">
       <a class="text-link" href="tel:0048519734926">
-        Zadzwoń +48 519 734 926
+        {{ $t('cta.call') }} {{ $t('general.phone-full') }}
       </a>
     </p>
   </nav>

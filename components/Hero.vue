@@ -1,17 +1,11 @@
 <template>
   <section class="hero">
     <div class="hero__content">
-      <h1 class="hero__title">
-        Detektyw<br>Mikrut
-      </h1>
-      <h2 class="hero__subtitle subtitle">
-        Nie kreujemy się na najlepszych<br>
-        Po prostu robimy swoje<br>
-        Dyskretnie i skutecznie!
-      </h2>
+      <h1 class="hero__heading" v-html="$t('hero.heading')" />
+      <h2 class="hero__subheading subtitle" v-html="$t('hero.subheading')"/>
       <div class="cta">
         <p class="cta__title">
-          Zadzwoń
+          {{ $t('cta.call') }}
         </p>
         <base-button phone-big/>
       </div>
@@ -71,7 +65,7 @@
   }
 
 
-  &__title {
+  &__heading {
     grid-column: inner;
     grid-row: 1 / 2;
     align-self: center;
@@ -81,7 +75,7 @@
     font-weight: 700;
   }
 
-  &__subtitle {
+  &__subheading {
     grid-column: inner;
     grid-row: 2 / 3;
     text-align: right;
@@ -119,7 +113,6 @@
   }
 
   &__left-text {
-
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;

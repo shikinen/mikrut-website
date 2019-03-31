@@ -1,23 +1,22 @@
 <template>
-<div>
-  <hero/>
-  <main class="main">
-    <service
-      v-for="(service, index) in services"
-      :key="index"
-      :title="service.title"
-      :items="service.items"
-      :text="service.text"
-      :left="(index + 1) % 2 === 0"
-      class="inner"
-    />
-    <map-section v-scroll-reveal class="inner"/>
-    <blog v-scroll-reveal class="inner"/>
-    <bio v-scroll-reveal class="inner"/>
-    <contact v-scroll-reveal class="overflow"/>
-  </main>
-</div>
-
+  <div>
+    <hero/>
+    <main class="main">
+      <service
+        v-for="(service, index) in services"
+        :key="index"
+        :title="service.title"
+        :items="service.items"
+        :text="service.text"
+        :left="(index + 1) % 2 === 0"
+        class="inner"
+      />
+      <map-section class="inner"/>
+      <blog class="inner"/>
+      <bio class="inner"/>
+      <contact class="overflow"/>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -27,7 +26,6 @@ import MapSection from '@/components/Map'
 import Blog from '@/components/Blog'
 import Bio from '@/components/Bio'
 import Contact from '@/components/contact/Contact'
-import data from '~/data/db.json'
 
 export default {
   components: {
@@ -40,7 +38,7 @@ export default {
   },
   data () {
     return {
-      services: data.services
+      services: this.$t('services')
     }
   }
 }

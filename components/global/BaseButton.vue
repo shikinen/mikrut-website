@@ -1,11 +1,11 @@
 <template>
   <div class="button__wrapper">
-    <span v-if="phone || phoneBig" :class="{ 'bigger-font': phoneBig }" class="button__phone">{{ phoneBig ? '+48' : 'Zadzwoń' }}</span>
+    <span v-if="phone || phoneBig" :class="{ 'bigger-font': phoneBig }" class="button__phone">{{ phoneBig ? $t('general.phone-prefix') : $t('cta.call') }}</span>
     <a
       :class="{ 'button--small': small, 'button--phone': phone, 'button--inline': inline, 'bigger-font': phoneBig }"
       class="button"
     >
-      {{ phoneBig ? '519 734 926' : phone ? '+48 519 734 926' : text }}
+      {{ phoneBig ? $t('general.phone-short') : phone ? $t('general.phone-full') : text }}
     </a>
     <svg
       width="24px"

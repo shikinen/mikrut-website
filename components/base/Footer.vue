@@ -2,35 +2,15 @@
   <footer class="footer">
     <logo/>
     <ul class="links">
-      <li class="links__link">
-        <nuxt-link to="" class="text-link">
-          Obserwacja
-        </nuxt-link>
-      </li>
-      <li class="links__link">
-        <nuxt-link to="" class="text-link">
-          Kontrobserwacja
-        </nuxt-link>
-      </li>
-      <li class="links__link">
-        <nuxt-link to="" class="text-link">
-          Blog
-        </nuxt-link>
-      </li>
-      <li class="links__link">
-        <nuxt-link to="" class="text-link">
-          O detektywie
-        </nuxt-link>
-      </li>
-      <li class="links__link">
-        <nuxt-link to="" class="text-link">
-          Kontakt
-        </nuxt-link>
+      <li v-for="service in footerLinks" :key="service" class="links__link">
+        <a href="" class="text-link">
+          {{ service.title }}
+        </a>
       </li>
     </ul>
     <info all/>
     <social all boxed/>
-    <small class="copy">{{ `&copy; ${ currentYear }, Kamil Mikrut ` }}</small>
+    <small class="copy">{{ `&copy; ${ currentYear }, Kamil Mikrut` }}</small>
   </footer>
 </template>
 
@@ -44,6 +24,13 @@ export default {
   data () {
     return {
       currentYear: new Date().getFullYear()
+    }
+  },
+  computed: {
+    footerLinks () {
+      const services = this.$t('services').slice(0, 2)
+      const links = this.$t('navigation').slice(1)
+      return services.concat(links)
     }
   }
 }

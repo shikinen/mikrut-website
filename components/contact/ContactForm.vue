@@ -3,21 +3,21 @@
     <input-component
       id="phone"
       type="phone"
-      placeholder="Numer telefonu"
+      :placeholder="$t('contact.phone-placeholder')"
     />
     <input-component
       id="name"
       type="text"
-      placeholder="Imię i nazwisko"
+      :placeholder="$t('contact.name-placeholder')"
       optional
     />
     <textarea-component
       id="message"
-      placeholder="Wiadomość"
+      :placeholder="$t('contact.phone-placeholder')"
     />
     <base-button
       class="form__button"
-      text="Wyślij"
+      :text="$t('cta.send')"
       small
       black
     />

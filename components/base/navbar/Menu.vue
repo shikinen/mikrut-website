@@ -3,19 +3,15 @@
     <div v-if="isMenuVisible" class="menu" @mouseleave="$store.commit('closeMenu')">
       <div class="info">
         <h4 class="title">
-          Usługi detektywa
+          {{ $t('submenu.title') }}
         </h4>
-        <p class="paragraph">
-          Poznaj usługi świadczone
-          <br>
-          przez Agencję Detektywistyczną.
-        </p>
+        <p class="paragraph" v-html="$t('submenu.paragraph')"/>
       </div>
       <ul class="services-list">
-        <li v-for="service in services" :key="service" class="services-list__service">
+        <li v-for="service in $t('services')" :key="service" class="services-list__service">
           <a class="accent-link" href="">
             <h3 class="services-list__title">
-              {{ service }}
+              {{ service.title }}
             </h3>
           </a>
         </li>
@@ -25,15 +21,9 @@
 </template>
 
 <script>
-import data from '~/data/db.json'
 import { mapState } from 'vuex'
 
 export default {
-  data () {
-    return {
-      services: data.services.map(service => service.title)
-    }
-  },
   computed: mapState(['isMenuVisible'])
 }
 </script>

@@ -1,15 +1,15 @@
 <template>
   <section class="blog">
     <div class="blog__info">
-      <section-title title="Blog Detektywa"/>
-      <base-button text="Czytaj więcej"/>
+      <section-title :title="$t('blog.title')"/>
+      <base-button :text="$t('cta.read-more')"/>
     </div>
     <ul class="blog__entries">
       <li v-for="(entry, index) in mockEntries" :key="index" class="blog__entry">
         <h4 class="blog__entry-title">
           {{ entry }}
         </h4>
-        <base-button class="blog__entry-button" text="Czytaj" inline/>
+        <base-button class="blog__entry-button" :text="$t('cta.read')" inline/>
       </li>
     </ul>
   </section>

@@ -2,7 +2,7 @@
   <div class="textarea">
     <textarea
       :id="id"
-      :placeholder="optional ? placeholder + ' (opcjonalnie)' : placeholder + ' *'"
+      :placeholder="optional ? placeholder + ' ' + $t('contact.optional') : placeholder + ' *'"
       :rows="rows"
       class="textarea__field"
     />

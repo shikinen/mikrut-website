@@ -3,7 +3,7 @@
     <div>
       <section-title title="Kamil Mikrut" underline left/>
       <p class="bio__text subtitle-medium">
-        {{ bio }}
+        {{ $t('bio.short') }}
       </p>
       <info concession license/>
     </div>
@@ -20,16 +20,10 @@
 <script>
 import Info from '@/components/base/Info'
 import SectionTitle from '@/components/base/SectionTitle'
-import data from '~/data/db.json'
 export default {
   components: {
     SectionTitle,
     Info
-  },
-  data () {
-    return {
-      bio: data.bio.short
-    }
   }
 }
 </script>

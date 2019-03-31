@@ -1,4 +1,5 @@
 import pkg from './package'
+import messages from './locales'
 
 export default {
   mode: 'universal',
@@ -56,7 +57,23 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['nuxt-i18n', {
+      locales: [
+        {
+          name: 'Polski',
+          code: 'pl',
+          iso: 'pl'
+        }
+      ],
+      defaultLocale: 'pl',
+      vueI18n: {
+        fallbackLocale: 'pl',
+        messages
+      }
+    }],
+    // Doc: https://nuxt-community.github.io/nuxt-i18n/
+
   ],
 
   /*

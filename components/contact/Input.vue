@@ -3,7 +3,7 @@
     <input
       :id="id"
       :type="type"
-      :placeholder="optional ? placeholder + ' (opcjonalnie)' : placeholder + ' *'"
+      :placeholder="optional ? placeholder + ' ' + $t('contact.optional') : placeholder + ' *'"
       class="input__field"
     >
     <label :for="id" class="input__label">{{ id }}</label>

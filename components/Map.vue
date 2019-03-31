@@ -1,9 +1,9 @@
 <template>
   <section class="map">
     <div>
-      <section-title title="Obszar operacyjny" underline left/>
+      <section-title :title="$t('map.title')" underline left/>
       <p class="map__text subtitle-medium">
-        {{ map }}
+        {{ $t('map.description') }}
       </p>
     </div>
     <img src="/img/map.svg">
@@ -12,16 +12,10 @@
 
 <script>
 import SectionTitle from '@/components/base/SectionTitle'
-import data from '~/data/db.json'
 
 export default {
   components: {
     SectionTitle
-  },
-  data () {
-    return {
-      map: data.map
-    }
   }
 }
 </script>
