@@ -1,6 +1,5 @@
 import pkg from './package'
 import messages from './locales'
-import scrollBehavior from './lib/route-utils'
 
 export default {
   mode: 'universal',
@@ -9,14 +8,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Detektyw Kamil Mikrut – usługi detektywistyczne',
+    title: pkg.name,
     htmlAttrs: {
       lang: 'pl-PL',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nadzwyczajna skuteczność działań detektywistycznych. Obsługa osób fizycznych i firm. Ustalenie ojcostwa, poszukiwania dzieci, pzyskiwanie dowodów, zdrady' }
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
@@ -25,9 +24,6 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '128x128', href: '/favicon-128.png' },
       { rel: 'icon', type: 'image/png', sizes: '196x196', href: '/favicon-196x196.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ],
-    src: [
-      { href: "https://unpkg.com/vue-bulma-accordion" }
     ]
   },
 
