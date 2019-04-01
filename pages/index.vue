@@ -3,7 +3,7 @@
     <hero/>
     <main class="main">
       <service
-        v-for="(service, index) in services"
+        v-for="(service, index) in $t('services')"
         :key="index"
         :title="service.title"
         :items="service.items"
@@ -11,7 +11,7 @@
         :left="(index + 1) % 2 === 0"
         class="inner"
       />
-      <map-section class="inner"/>
+      <map-section class="binner"/>
       <blog id="blog" class="inner"/>
       <bio class="inner"/>
       <contact id="contact" class="overflow"/>
@@ -35,11 +35,6 @@ export default {
     Blog,
     Bio,
     Contact
-  },
-  data () {
-    return {
-      services: this.$t('services')
-    }
   }
 }
 </script>

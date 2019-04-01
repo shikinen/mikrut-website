@@ -63,6 +63,8 @@ export default {
 
 
 .accordion-item {
+  cursor: pointer;
+
   position: relative;
   &::after {
     content: '';
@@ -73,6 +75,11 @@ export default {
     width: 80px;
     height: 1px;
     background: rgba($secondary-color, .2);
+    transition: $base-transition;
+  }
+
+  &:hover::after {
+    background: $accent-color;
   }
 
   &.left::after {
@@ -136,8 +143,8 @@ export default {
     margin: auto;
     width: $size;
     height: $size;
-    border-right: 2px solid $secondary-color;
-    border-bottom: 2px solid $secondary-color;
+    border-right: 1px solid rgba($secondary-color, .5);
+    border-bottom: 1px solid rgba($secondary-color, .5);
     transform: translateY(-$size / 4) rotate(45deg);
     transition: $base-transition;
 
