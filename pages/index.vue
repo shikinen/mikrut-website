@@ -11,7 +11,7 @@
         :left="(index + 1) % 2 === 0"
         class="inner"
       />
-      <map-section class="binner"/>
+      <map-section class="inner"/>
       <blog id="blog" class="inner"/>
       <bio class="inner"/>
       <contact id="contact" class="overflow"/>
