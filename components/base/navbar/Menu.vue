@@ -8,7 +8,7 @@
         <p class="paragraph" v-html="$t('submenu.paragraph')"/>
       </div>
       <ul class="services-list">
-        <li v-for="service in $t('services')" :key="service" class="services-list__service">
+        <li v-for="service in $t('services')" :key="service.title" class="services-list__service">
           <a class="accent-link" href="">
             <h3 class="services-list__title">
               {{ service.title }}

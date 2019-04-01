@@ -1,5 +1,6 @@
 import pkg from './package'
 import messages from './locales'
+import scrollBehavior from './lib/route-utils'
 
 export default {
   mode: 'universal',
@@ -28,6 +29,18 @@ export default {
     src: [
       { href: "https://unpkg.com/vue-bulma-accordion" }
     ]
+  },
+
+  /*
+  ** Router configuration
+  */
+  router: {
+    scrollBehavior(to) {
+      if (to.hash) {
+        return window.scrollTo({ top: document.querySelector(to.hash).offsetTop, behavior: 'smooth' });
+      }
+      return window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
   },
 
   /*

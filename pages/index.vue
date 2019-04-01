@@ -12,9 +12,9 @@
         class="inner"
       />
       <map-section class="inner"/>
-      <blog class="inner"/>
+      <blog id="blog" class="inner"/>
       <bio class="inner"/>
-      <contact class="overflow"/>
+      <contact id="contact" class="overflow"/>
     </main>
   </div>
 </template>
@@ -50,7 +50,6 @@ export default {
     grid-template-columns: 40px [full-start] 1fr [overflow-start] 84px [inner-start] 968px [inner-end] 84px [overflow-end] 1fr [full-end] 40px;
     margin-bottom: 196px;
     grid-row-gap: 196px;
-    position: relative;
     margin-top: 100vh;
     &::before {
       content: '';

@@ -1,7 +1,7 @@
 <template>
   <nav class="navigation">
     <ul class="navigation__list">
-      <li v-for="item in $t('navigation')" :key="item" class="navigation__item">
+      <li v-for="item in $t('navigation')" :key="item.title" class="navigation__item">
         <span
           v-if="item.submenu"
           :class="{ 'services--active': isMenuVisible }"
@@ -10,9 +10,13 @@
         >
           {{ item.title }}
         </span>
-        <a v-else class="text-link" href="">
+        <nuxt-link
+          v-else
+          class="text-link"
+          :to="{ path: '/', hash: item.hash }"
+        >
           {{ item.title }}
-        </a>
+        </nuxt-link>
       </li>
     </ul>
     <p class="navigation__phone">

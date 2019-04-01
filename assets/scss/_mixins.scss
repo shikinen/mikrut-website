@@ -156,6 +156,12 @@ $breakpoints: (
   padding: 0 $container-padding;
 }
 
+@mixin anchor {
+  position: relative;
+  top: -144px;
+  visibility: hidden;
+}
+
 @mixin paragraph-font {
   font-size: $paragraph-font-size;
   font-weight: $paragraph-font-weight;

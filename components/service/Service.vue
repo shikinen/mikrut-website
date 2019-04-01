@@ -14,6 +14,8 @@
     </div>
     <img
       v-lazy="'/img/observation-1x.jpg'"
+      width="560"
+      height="560"
       :class="{ 'service__img--left': left }"
       data-srcset="/img/observation-1x.jpg 1x,
               /img/observation-2x.jpg 2x,

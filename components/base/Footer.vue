@@ -2,7 +2,7 @@
   <footer class="footer">
     <logo/>
     <ul class="links">
-      <li v-for="service in footerLinks" :key="service" class="links__link">
+      <li v-for="service in footerLinks" :key="service.title" class="links__link">
         <a href="" class="text-link">
           {{ service.title }}
         </a>
