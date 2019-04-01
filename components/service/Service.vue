@@ -2,6 +2,7 @@
   <section class="service">
     <div :class="{ 'service__info--left': left }" class="service__info">
       <section-title
+        :id="id"
         :title="title"
         :left="left"
         class="service__title"
@@ -18,8 +19,8 @@
       height="560"
       :class="{ 'service__img--left': left }"
       data-srcset="/img/observation-1x.jpg 1x,
-              /img/observation-2x.jpg 2x,
-              /img/observation-3x.jpg 3x"
+                   /img/observation-2x.jpg 2x,
+                   /img/observation-3x.jpg 3x"
       class="service__img"
     >
   </section>
@@ -36,6 +37,10 @@ export default {
   },
   props: {
     title: {
+      type: String,
+      default: ''
+    },
+    id: {
       type: String,
       default: ''
     },
@@ -69,8 +74,6 @@ export default {
     &__info {
       text-align: right;
       grid-column: 6 / 13;
-      position: relative;
-      z-index: 1;
 
       &--left {
         text-align: left;
@@ -79,6 +82,8 @@ export default {
     }
 
     &__img {
+      position: relative;
+      z-index: -1;
       grid-column: 1 /7;
 
       &--left {

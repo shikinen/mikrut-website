@@ -1,7 +1,11 @@
 <template>
   <section class="container">
     <div class="info">
-      <section-title :title="$t('contact.title')"/>
+      <section-title
+        id="contact"
+        :top="400"
+        :title="$t('contact.title')"
+      />
       <h4 class="subtitle-semibold" v-html="$t('contact.subtitle')"/>
       <base-button class="info__button" phone black/>
     </div>

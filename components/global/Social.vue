@@ -1,5 +1,5 @@
 <template>
-  <ul :class="{ 'socials--boxed': boxed }" class="socials">
+  <ul :class="{ 'socials--boxed': boxed, vertical }" class="socials">
     <li v-if="all || instagram" class="socials__icon">
       <a class="socials__link" href="https://www.instagram.com/detektywmikrut/" target="_blank">
         <svg
@@ -85,6 +85,10 @@ export default {
       type: Boolean,
       default: false
     },
+    vertical: {
+      type: Boolean,
+      default: false
+    },
     all: {
       type: Boolean,
       default: false
@@ -139,6 +143,30 @@ export default {
       }
       .socials__svg {
         fill: $primary-color;
+      }
+    }
+  }
+
+  .vertical {
+    flex-direction: column;
+    .socials__icon {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+
+      &:hover {
+        transform: translateX(-4px);
+      }
+    }
+
+
+    .socials--boxed {
+      .socials__icon {
+        &:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 16;
+        }
       }
     }
   }

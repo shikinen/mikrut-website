@@ -9,11 +9,11 @@
       </div>
       <ul class="services-list">
         <li v-for="service in $t('services')" :key="service.title" class="services-list__service">
-          <a class="accent-link" href="">
+          <nuxt-link class="accent-link" :to="{ path: '/', hash: service.id }">
             <h3 class="services-list__title">
               {{ service.title }}
             </h3>
-          </a>
+          </nuxt-link>
         </li>
       </ul>
     </div>

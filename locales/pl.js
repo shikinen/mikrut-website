@@ -16,7 +16,7 @@ export default {
     },
     {
       title: 'O detektywie',
-      hash: 'about',
+      hash: 'bio',
       submenu: false
     },
     {
@@ -42,6 +42,7 @@ export default {
   services: [
     {
       title: 'Obserwacja',
+      id: "observation",
       items: [
         {
           title: 'zdrada i rozwód',
@@ -59,6 +60,7 @@ export default {
     },
     {
       title: 'Kontrobserwacja',
+      id: "counterobservation",
       items: [
         {
           title: 'sprawdzenia pracownicze',
@@ -72,6 +74,7 @@ export default {
     },
     {
       title: 'Wykrywanie urządzeń',
+      id: "detection",
       items: [
         {
           title: 'wykrywanie inwigilacji bezpośredniej',
@@ -85,6 +88,7 @@ export default {
     },
     {
       title: 'Ustalenia detektywistyczne',
+      id: "investigation",
       items: [
         {
           title: 'ustalenia dowodowe na potrzeby postępowania sądowego oraz na potrzeby własne Zlecającego',
@@ -106,6 +110,7 @@ export default {
     },
     {
       title: 'Inne',
+      id: "other",
       text: 'Pomagam skutecznie rozwiązywać sprawy, których charakter i specyfika mogą wydawać się niestandardowe. W pierwszej kolejności krytycznie analizuję zagadnienie razem ze Zlecającym oraz specjalistami z innych dziedzin, aby móc przedstawić bezpieczne i realne rozwiązanie problemu. Działamy zawsze zgodnie z prawem.'
     }
   ],

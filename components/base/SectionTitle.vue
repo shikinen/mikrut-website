@@ -1,7 +1,10 @@
 <template>
-  <h3 :class="{ underline, left }" class="section-title">
-    {{ title }}
-  </h3>
+  <div class="wrapper">
+    <h3 :class="{ underline, left }" class="section-title">
+      {{ title }}
+    </h3>
+    <a :id="id" :style="{ top: -top + 'px' }" class="scroll-anchor"/>
+  </div>
 </template>
 
 <script>
@@ -10,6 +13,14 @@ export default {
     title: {
       type: String,
       default: ''
+    },
+    id: {
+      type: String,
+      default: ''
+    },
+    top: {
+      type: Number,
+      default: 296
     },
     underline: {
       type: Boolean,
@@ -53,5 +64,14 @@ export default {
       left: 0;
       transform: translateX(-50%);
     }
+  }
+
+  $header-offset: 296px;
+  .scroll-anchor {
+    display: inline-block;
+    position: relative;
+    top: -$header-offset;
+    left: 0;
+    visibility: hidden;
   }
 </style>

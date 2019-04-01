@@ -1,16 +1,18 @@
 <template>
   <footer class="footer">
-    <logo/>
-    <ul class="links">
-      <li v-for="service in footerLinks" :key="service.title" class="links__link">
-        <a href="" class="text-link">
-          {{ service.title }}
-        </a>
-      </li>
-    </ul>
-    <info all/>
-    <social all boxed/>
-    <small class="copy">{{ `&copy; ${currentYear}, Kamil Mikrut` }}</small>
+    <div class="footer__content">
+      <logo/>
+      <ul class="links">
+        <li v-for="service in footerLinks" :key="service.title" class="links__link">
+          <a href="" class="text-link">
+            {{ service.title }}
+          </a>
+        </li>
+      </ul>
+      <info all/>
+      <social all boxed/>
+      <small class="copy">{{ `&copy; ${currentYear}, Kamil Mikrut` }}</small>
+    </div>
   </footer>
 </template>
 
@@ -38,26 +40,31 @@ export default {
 
 <style lang="scss" scoped>
   .footer {
-    @include main-container;
-
-    padding-top: 32px;
-    padding-bottom: 96px;
-    & > *:not(:last-child) {
-      margin-bottom: 64px;
-    }
-
-    @include media-up(md) {
-      display: flex;
-      padding-bottom: 160px;
-      justify-content: space-between;
-      & > *:not(:last-child) {
-        margin-bottom: 0;
-      }
-    }
-
-    font-size: 14px;
-    font-weight: 700;
     position: relative;
+    z-index: 4;
+    background: $primary-color;
+
+    &__content {
+      @include main-container;
+      padding-top: 32px;
+      padding-bottom: 96px;
+      & > *:not(:last-child) {
+        margin-bottom: 64px;
+      }
+
+      @include media-up(md) {
+        display: flex;
+        padding-bottom: 160px;
+        justify-content: space-between;
+        & > *:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+
+      font-size: 14px;
+      font-weight: 700;
+      position: relative;
+    }
   }
 
   .links {

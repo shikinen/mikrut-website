@@ -1,7 +1,12 @@
 <template>
   <section class="map">
     <div>
-      <section-title :title="$t('map.title')" underline left/>
+      <section-title
+        id="map"
+        :title="$t('map.title')"
+        underline
+        left
+      />
       <p class="map__text subtitle-medium">
         {{ $t('map.description') }}
       </p>

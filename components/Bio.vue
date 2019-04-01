@@ -1,7 +1,12 @@
 <template>
   <section class="bio">
     <div>
-      <section-title title="Kamil Mikrut" underline left/>
+      <section-title
+        id="bio"
+        title="Kamil Mikrut"
+        underline
+        left
+      />
       <p class="bio__text subtitle-medium">
         {{ $t('bio.short') }}
       </p>

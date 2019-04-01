@@ -1,7 +1,11 @@
 <template>
   <section class="blog">
     <div class="blog__info">
-      <section-title :title="$t('blog.title')"/>
+      <section-title
+        id="blog"
+        :top="400"
+        :title="$t('blog.title')"
+      />
       <base-button :text="$t('cta.read-more')"/>
     </div>
     <ul class="blog__entries">

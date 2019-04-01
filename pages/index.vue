@@ -4,6 +4,7 @@
     <main class="main">
       <service
         v-for="(service, index) in $t('services')"
+        :id="service.id"
         :key="index"
         :title="service.title"
         :items="service.items"
@@ -12,9 +13,9 @@
         class="inner"
       />
       <map-section class="inner"/>
-      <blog id="blog" class="inner"/>
+      <blog class="inner"/>
       <bio class="inner"/>
-      <contact id="contact" class="overflow"/>
+      <contact class="overflow"/>
     </main>
   </div>
 </template>
@@ -41,16 +42,13 @@ export default {
 
 <style lang="scss" scoped>
   .main {
+    position: relative;
+    z-index: 4;
     display: grid;
     grid-template-columns: 40px [full-start] 1fr [overflow-start] 84px [inner-start] 968px [inner-end] 84px [overflow-end] 1fr [full-end] 40px;
-    margin-bottom: 196px;
+    padding: 196px 0;
     grid-row-gap: 196px;
-    margin-top: 100vh;
-    &::before {
-      content: '';
-      @include coverer;
-      top: -100vh;
-    }
+    background: $primary-color;
   }
 
   .full {

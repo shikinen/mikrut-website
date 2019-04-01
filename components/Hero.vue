@@ -9,7 +9,7 @@
         </p>
         <base-button phone-big/>
       </div>
-      <social class="hero__social" all/>
+      <social class="hero__social" vertical all/>
       <!-- <div class="hero__left">
         <span class="hero__left-text">
           Detektyw Mikrut
@@ -20,7 +20,6 @@
       class="hero__video"
       src="/video/hero.mp4"
       autoplay
-      loop
       playsinline
       muted
     />
@@ -29,33 +28,40 @@
 </template>
 
 <style lang="scss" scoped>
+$video-index: 1;
+$overlay-index: 2;
+$content-index: 3;
 
 .hero {
-
   &__video {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: $video-index;
+    height: auto;
+    width: auto;
+    min-height: 100%;
+    min-width: 100%;
     object-fit: cover;
-    z-index: 1;
   }
 
   &__video-overlay {
-    background: rgba($primary-color, .5);
-    z-index: 2;
-  }
-
-  &,
-  &__content,
-  &__video,
-  &__video-overlay {
-    @include coverer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: $overlay-index;
+    background-image: linear-gradient(rgba($primary-color, .3), rgba($primary-color, 1));
   }
 
   &__content {
     position: relative;
-    z-index: 3;
+    z-index: $content-index;
     height: 100vh;
     display: grid;
-    grid-template-columns: [full-start] 1fr [inner-start] 968px [inner-end] 1fr [full-end];
-    grid-template-rows: repeat(3, max-content);
+    grid-template-columns: 40px [full-start] 1fr [inner-start] 968px [inner-end] 1fr [full-end] 40px;
+    grid-template-rows: repeat(4, max-content);
     grid-row-gap: 16px;
     align-content: center;
     // background-image: url('/img/hero.jpg');
@@ -99,8 +105,10 @@
   }
 
   &__social {
-    grid-row: 3 / 4;
-    align-self: end;
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+    align-self: center;
+    justify-self: end;
   }
 
   &__left {
