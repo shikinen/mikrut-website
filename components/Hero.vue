@@ -1,7 +1,15 @@
 <template>
   <section class="hero">
-    <div class="hero__content">
-      <h1 class="hero__heading" v-html="$t('hero.heading')" />
+    <div
+      class="hero__content lax"
+      data-lax-scale="0 1, vh 0.2"
+      data-lax-translate-y="0 0, vh 1200"
+      data-lax-opacity="0 1, (vh*0.5) 0"
+    >
+      <h1
+        class="hero__heading"
+        v-html="$t('hero.heading')"
+      />
       <h2 class="hero__subheading subtitle" v-html="$t('hero.subheading')"/>
       <div class="cta">
         <p class="cta__title">
@@ -10,11 +18,6 @@
         <base-button phone-big/>
       </div>
       <social class="hero__social" vertical all/>
-      <!-- <div class="hero__left">
-        <span class="hero__left-text">
-          Detektyw Mikrut
-        </span>
-      </div> -->
     </div>
     <video
       class="hero__video"
@@ -26,6 +29,16 @@
     <div class="hero__video-overlay"/>
   </section>
 </template>
+
+<script>
+import lax from 'lax.js'
+
+export default {
+  mounted () {
+    lax.addElement(this.$el) // add your element to lax when it mounts
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 $video-index: 1;
@@ -60,7 +73,10 @@ $content-index: 3;
     z-index: $content-index;
     height: 100vh;
     display: grid;
-    grid-template-columns: 40px [full-start] 1fr [inner-start] 968px [inner-end] 1fr [full-end] 40px;
+    grid-template-columns: 40px [full-start inner-start] 1fr [inner-end full-end] 40px;
+    @include media-up(xxlg) {
+      grid-template-columns: 40px [full-start] 1fr [inner-start] 968px [inner-end] 1fr [full-end] 40px;
+    }
     grid-template-rows: repeat(4, max-content);
     grid-row-gap: 16px;
     align-content: center;
@@ -79,6 +95,7 @@ $content-index: 3;
     font-size: 96px;
     line-height: 1.2;
     font-weight: 700;
+    position: relative;
   }
 
   &__subheading {
@@ -105,27 +122,14 @@ $content-index: 3;
   }
 
   &__social {
+
     grid-row: 1 / 2;
-    grid-column: 4 / 5;
+    grid-column: 2 / 3;
     align-self: center;
     justify-self: end;
-  }
-
-  &__left {
-    justify-self: start;
-    align-self: center;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    transform: rotate(-90deg);
-    text-align: center;
-  }
-
-  &__left-text {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-
-    letter-spacing: 3px;
+    @include media-up(xxlg) {
+      grid-column: 4 / 5;
+    }
   }
 }
 

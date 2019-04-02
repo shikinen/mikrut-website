@@ -14,13 +14,13 @@
       <accordion v-else :content="items" :left="left"/>
     </div>
     <img
-      v-lazy="'/img/observation-1x.jpg'"
+      v-lazy="`/img/${id}-1x.jpg`"
       width="560"
       height="560"
       :class="{ 'service__img--left': left }"
-      data-srcset="/img/observation-1x.jpg 1x,
-                   /img/observation-2x.jpg 2x,
-                   /img/observation-3x.jpg 3x"
+      :data-srcset="`/img/${id}-1x.jpg 1x,
+                     /img/${id}-2x.jpg 2x,
+                     /img/${id}-3x.jpg 3x`"
       class="service__img"
     >
   </section>

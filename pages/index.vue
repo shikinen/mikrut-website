@@ -45,7 +45,10 @@ export default {
     position: relative;
     z-index: 4;
     display: grid;
-    grid-template-columns: 40px [full-start] 1fr [overflow-start] 84px [inner-start] 968px [inner-end] 84px [overflow-end] 1fr [full-end] 40px;
+    grid-template-columns: 40px [full-start overflow-start inner-start] 1fr [inner-end overflow-end full-end] 40px;
+    @include media-up(xxlg) {
+      grid-template-columns: 40px [full-start] 1fr [overflow-start] 84px [inner-start] 968px [inner-end] 84px [overflow-end] 1fr [full-end] 40px;
+    }
     padding: 196px 0;
     grid-row-gap: 196px;
     background: $primary-color;

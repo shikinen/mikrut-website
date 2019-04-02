@@ -13,10 +13,10 @@
       <info concession license/>
     </div>
     <img
-      v-lazy="'/img/bio-1x.jpg'"
-      data-srcset="/img/bio-1x.jpg 1x,
-              /img/bio-2x.jpg 2x,
-              /img/bio-3x.jpg 3x"
+      v-lazy="'/img/bio-1x.png'"
+      data-srcset="/img/bio-1x.png 1x,
+                   /img/bio-2x.png 2x,
+                   /img/bio-3x.png 3x"
       class="bio__img"
     >
   </section>
@@ -36,9 +36,16 @@ export default {
 
 <style lang="scss" scoped>
   .bio {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(300px, 600px));
+    @include media-up(xlg) {
+    }
     grid-column-gap: 16px;
+
+    &__img {
+      align-self: center;
+    }
 
     &__text {
       margin-top: 96px;

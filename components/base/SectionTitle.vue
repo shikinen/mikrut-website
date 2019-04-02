@@ -49,7 +49,9 @@ export default {
       position: absolute;
       z-index: -1;
       right: 0;
-      transform: translateX(50%);
+      @include media-up(xxlg) {
+        transform: translateX(50%);
+      }
       bottom: 0;
       width: 176px;
       height: 24px;
@@ -62,7 +64,9 @@ export default {
     &::before {
       right: unset;
       left: 0;
-      transform: translateX(-50%);
+      @include media-up(xxlg) {
+        transform: translateX(-50%);
+      }
     }
   }
 

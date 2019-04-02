@@ -1,13 +1,18 @@
 <template>
-  <section class="map">
+  <section class="map lax">
     <div>
       <section-title
         id="map"
         :title="$t('map.title')"
+        class="lax"
+        data-lax-preset="rightToLeft-.1"
         underline
         left
       />
-      <p class="map__text subtitle-medium">
+      <p
+        class="map__text subtitle-medium lax"
+        data-lax-preset="fadeOut"
+      >
         {{ $t('map.description') }}
       </p>
     </div>
@@ -119,10 +124,14 @@
 
 <script>
 import SectionTitle from '@/components/base/SectionTitle'
+import lax from 'lax.js'
 
 export default {
   components: {
     SectionTitle
+  },
+  mounted () {
+    lax.addElement(this.$el) // add your element to lax when it mounts
   }
 }
 </script>

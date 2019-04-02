@@ -86,8 +86,9 @@
 $breakpoints: (
   sm: 576px,
   md: 768px,
-  lg: 968px,
-  xlg: 1170px
+  lg: 1000px,
+  xlg: 1170px,
+  xxlg: 1220px
 );
 
 @mixin media($breakpoint: null, $is-mobile-first: true, $width: null) {

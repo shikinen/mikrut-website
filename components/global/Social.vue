@@ -1,7 +1,12 @@
 <template>
   <ul :class="{ 'socials--boxed': boxed, vertical }" class="socials">
     <li v-if="all || instagram" class="socials__icon">
-      <a class="socials__link" href="https://www.instagram.com/detektywmikrut/" target="_blank">
+      <a
+        class="socials__link"
+        href="https://www.instagram.com/detektywmikrut/"
+        rel="nofollow"
+        target="_blank"
+      >
         <svg
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +39,12 @@
       </a>
     </li>
     <li v-if="all || facebook" class="socials__icon">
-      <a class="socials__link" href="https://www.facebook.com/detektyw.mikrut/" target="_blank">
+      <a
+        class="socials__link"
+        href="https://www.facebook.com/detektyw.mikrut/"
+        rel="nofollow"
+        target="_blank"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 58 58"
@@ -50,7 +60,12 @@
       </a>
     </li>
     <li v-if="all || linkedin" class="socials__icon">
-      <a class="socials__link" href="https://www.facebook.com/detektyw.mikrut/" target="_blank">
+      <a
+        class="socials__link"
+        href="https://www.linkedin.com/in/kamilmikrut/"
+        rel="nofollow"
+        target="_blank"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
