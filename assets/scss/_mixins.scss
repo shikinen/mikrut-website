@@ -42,7 +42,8 @@
 	vertical-align: middle;
 	white-space: normal;
 	background: none;
-	line-height: 1;
+  line-height: 1;
+  font-family: inherit;
   &:focus {
     outline: 0;
   }
