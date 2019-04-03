@@ -47,15 +47,15 @@ export default {
     &__content {
       @include main-container;
       padding-top: 32px;
-      padding-bottom: 96px;
+      padding-bottom: 160px;
       & > *:not(:last-child) {
         margin-bottom: 64px;
       }
 
       @include media-up(md) {
         display: flex;
-        padding-bottom: 160px;
         justify-content: space-between;
+
         & > *:not(:last-child) {
           margin-bottom: 0;
         }
@@ -84,7 +84,11 @@ export default {
     position: absolute;
     margin-bottom: 16px;
     bottom: 0;
-    left: $container-padding;
+
+    left: $container-padding-sm;
+    @include media-up(sm) {
+      left: $container-padding;
+    }
 
     @include media-up(md) {
       left: unset;

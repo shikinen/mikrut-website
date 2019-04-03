@@ -57,8 +57,14 @@ export default {
   .info {
     display: grid;
     grid-template-rows: repeat(3, min-content);
-    grid-template-columns: max-content 48px max-content;
-    grid-gap: 32px;
+    grid-template-columns: max-content 32px max-content;
+    grid-gap: 16px;
+
+    @include media-up(sm) {
+      grid-template-columns: max-content 48px max-content;
+      grid-gap: 32px;
+    }
+
     &__line {
       align-self: center;
     }

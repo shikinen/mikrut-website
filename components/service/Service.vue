@@ -1,23 +1,21 @@
 <template>
   <section class="service">
-    <div :class="{ 'service__info--left': left }" class="service__info">
+    <div :class="{ 'service__info--right': right }" class="service__info">
       <section-title
         :id="id"
         :title="title"
-        :left="left"
+        :right="right"
         class="service__title"
         underline
       />
       <p v-if="text" class="subtitle-medium">
         {{ text }}
       </p>
-      <accordion v-else :content="items" :left="left"/>
+      <accordion v-else :content="items" :right="right"/>
     </div>
     <img
       v-lazy="`/img/${id}-1x.jpg`"
-      width="560"
-      height="560"
-      :class="{ 'service__img--left': left }"
+      :class="{ 'service__img--right': right }"
       :data-srcset="`/img/${id}-1x.jpg 1x,
                      /img/${id}-2x.jpg 2x,
                      /img/${id}-3x.jpg 3x`"
@@ -48,7 +46,7 @@ export default {
       type: Array,
       default: () => []
     },
-    left: {
+    right: {
       type: Boolean,
       default: false
     },
@@ -63,7 +61,7 @@ export default {
 <style lang="scss" scoped>
   .service {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: [full-start] repeat(12, 1fr) [full-end];
     grid-column-gap: 16px;
 
     &__info,
@@ -72,27 +70,36 @@ export default {
     }
 
     &__info {
-      text-align: right;
-      grid-column: 6 / 13;
+      grid-column: full;
+      @include media-up(md) {
+        grid-column: 1 / 7;
+      }
 
-      &--left {
-        text-align: left;
-        grid-column: 1 /7;
+      &--right {
+        @include media-up(md) {
+          text-align: right;
+          grid-column: 6 / 13;
+        }
       }
     }
 
     &__img {
       position: relative;
       z-index: -1;
-      grid-column: 1 /7;
+      grid-column: 6 / 13;
+      width: 100%;
+      max-width: 560px;
+      @include media-down(md) {
+        display: none;
+      }
 
-      &--left {
-        grid-column: 6 / 13;
+      &--right {
+        grid-column: 1 / 7;
       }
     }
 
     &__title {
-      margin-bottom: 96px;
+      @include margin-lg;
     }
   }
 </style>

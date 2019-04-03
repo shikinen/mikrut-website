@@ -155,7 +155,13 @@ $breakpoints: (
   max-width: 1016px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 $container-padding;
+
+  padding-right: $container-padding-sm;
+  padding-left: $container-padding-sm;
+  @include media-up(sm) {
+    padding-right: $container-padding;
+    padding-left: $container-padding;
+  }
 }
 
 @mixin anchor {
@@ -168,6 +174,9 @@ $breakpoints: (
   font-size: $paragraph-font-size;
   font-weight: $paragraph-font-weight;
   line-height: $paragraph-line-height;
+  @include media-down(md) {
+    font-size: 18px;
+  }
 }
 
 @mixin subtitle-font {
@@ -204,10 +213,27 @@ $breakpoints: (
   }
 }
 
-@mixin coverer {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
+@mixin margin-lg($direction: bottom, $all: false) {
+  @if $all {
+    margin: 32px;
+
+    @include media-up(md) {
+      margin: 48px
+    }
+
+    @include media-up(lg) {
+      margin: 80px;
+    }
+
+  } @else {
+    margin-#{$direction}: 32px;
+
+    @include media-up(md) {
+      margin-#{$direction}: 48px
+    }
+
+    @include media-up(lg) {
+      margin-#{$direction}: 80px;
+    }
+  }
 }

@@ -5,7 +5,7 @@
       :key="item.id"
       :multiple="multiple"
       :item="item"
-      :left="left"
+      :right="right"
     />
   </ul>
 </template>
@@ -25,7 +25,7 @@ export default {
       type: Boolean,
       default: false
     },
-    left: {
+    right: {
       type: Boolean,
       default: false
     }

@@ -5,8 +5,9 @@
         id="blog"
         :top="400"
         :title="$t('blog.title')"
+        right
       />
-      <base-button :text="$t('cta.read-more')"/>
+      <base-button class="blog__button" :text="$t('cta.read-more')"/>
     </div>
     <ul class="blog__entries">
       <li v-for="(entry, index) in mockEntries" :key="index" class="blog__entry">
@@ -39,19 +40,32 @@ export default {
 
 <style lang="scss" scoped>
   .blog {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 152px;
+    @include media-up(md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 96px;
+    }
 
-    &__text {
-      margin-top: 96px;
-      margin-bottom: 72px;
+    @include media-up(xlg) {
+      grid-column-gap: 152px;
     }
 
     &__info {
-      text-align: right;
-      display: grid;
-      grid-row-gap: 96px;
+      margin-bottom: 80px;
+
+      @include media-up(md) {
+        margin-bottom: 0;
+        text-align: right;
+      }
+    }
+
+    &__button {
+      @include margin-lg(top);
+    }
+
+     &__text {
+      margin-top: 96px;
+      margin-bottom: 72px;
     }
 
     &__entries {
@@ -72,10 +86,13 @@ export default {
     }
 
     &__entry-title {
-      font-size: 32px;
       line-height: 1.2;
       font-weight: 700;
       max-width: 336px;
+      font-size: 24px;
+      @include media-up(sm) {
+        font-size: 32px;
+      }
     }
 
     &__entry-button {

@@ -1,6 +1,13 @@
 <template>
-  <div class="wrapper">
-    <h3 :class="{ underline, left }" class="section-title">
+  <div
+    class="wrapper"
+    :data-aos="right ? 'fade-left' : 'fade-right'"
+    data-aos-easing="ease"
+    data-aos-duration="800"
+    data-aos-delay="200"
+    data-aos-once="true"
+  >
+    <h3 :class="{ underline, right }" class="section-title">
       {{ title }}
     </h3>
     <a :id="id" :style="{ top: -top + 'px' }" class="scroll-anchor"/>
@@ -26,7 +33,7 @@ export default {
       type: Boolean,
       default: false
     },
-    left: {
+    right: {
       type: Boolean,
       default: false
     }
@@ -36,8 +43,22 @@ export default {
 
 <style lang="scss" scoped>
   .section-title {
-    font-size: 80px;
+    font-size: 48px;
     font-weight: 700;
+    overflow-wrap: break-word;
+    hyphens: auto;
+
+    @include media-up(sm) {
+      font-size: 64px;
+      overflow-wrap: normal;
+      hyphens: none;
+    }
+
+    @include media-up(lg) {
+      font-size: 80px;
+    }
+
+
   }
 
   .underline {
@@ -48,24 +69,33 @@ export default {
       display: block;
       position: absolute;
       z-index: -1;
-      right: 0;
+      left: 0;
+
+      transform: translateX(-10%);
       @include media-up(xxlg) {
-        transform: translateX(50%);
+        transform: translateX(-50%);
       }
+
       bottom: 0;
-      width: 176px;
+      width: 96px;
+
+      @include media-up(sm) {
+        width: 176px;
+      }
       height: 24px;
       background-color: $accent-color;
       box-shadow: $accent-shadow-blurred;
     }
-  }
 
-  .left {
-    &::before {
-      right: unset;
-      left: 0;
+    &.right::before {
+      @include media-up(md) {
+        left: unset;
+        right: 0;
+        transform: translateX(10%);
+      }
+
       @include media-up(xxlg) {
-        transform: translateX(-50%);
+        transform: translateX(50%);
       }
     }
   }

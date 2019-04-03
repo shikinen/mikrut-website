@@ -57,7 +57,9 @@ export default {
   plugins: [
     '~plugins/global-components',
     '~plugins/vue-lazyload',
-    { src:'~/plugins/lax.js', ssr: false }
+    '~plugins/directives',
+    { src:'~/plugins/lax.js', ssr: false },
+    { src: "~/plugins/aos", ssr: false }
   ],
 
   /*

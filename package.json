@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "aos": "^3.0.0-beta.6",
     "cross-env": "^5.2.0",
     "lax.js": "^1.2.0",
     "nuxt": "^2.4.0",

@@ -1,12 +1,12 @@
 <template>
   <transition name="fade" mode="out-in">
     <div v-if="isMenuVisible" class="menu" @mouseleave="$store.commit('closeMenu')">
-      <div class="info">
+      <!-- <div class="info">
         <h4 class="title">
           {{ $t('submenu.title') }}
         </h4>
         <p class="paragraph" v-html="$t('submenu.paragraph')"/>
-      </div>
+      </div> -->
       <ul class="services-list">
         <li v-for="service in $t('services')" :key="service.title" class="services-list__service">
           <nuxt-link class="accent-link" :to="{ path: '/', hash: service.id }">
@@ -34,13 +34,18 @@ export default {
     background-color: $secondary-color;
     color: $primary-color;
     padding: 56px 40px;
+    padding-right: 24px;
 
     display: flex;
     align-items: center;
   }
 
   .info {
-    margin-right: 80px;
+    @include hide-down(xlg);
+    margin-right: 32px;
+    @include media-up(xxlg) {
+      margin-right: 48px;
+    }
   }
 
   .title {
@@ -57,7 +62,13 @@ export default {
     &__service {
       margin-bottom: 64px;
       &:not(:last-child) {
-        margin-right: 80px;
+        margin-right: 40px;
+        @include media-up(xlg) {
+          margin-right: 24px;
+        }
+        @include media-up(xxlg) {
+          margin-right: 40px;
+        }
       }
     }
     &__title {

@@ -1,5 +1,5 @@
 <template>
-  <li :id="item.id" class="accordion-item" :class="{ 'active': item.active, 'left': left }">
+  <li :id="item.id" class="accordion-item" :class="{ 'active': item.active, right }">
     <header class="accordion-item__header">
       <h4 class="accordion-item__title" @click="toggle">
         {{ item.title }}
@@ -29,7 +29,7 @@ export default {
       type: Object,
       default: () => {}
     },
-    left: {
+    right: {
       type: Boolean,
       default: false
     },
@@ -70,7 +70,7 @@ export default {
     content: '';
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     display: block;
     width: 80px;
     height: 1px;
@@ -78,13 +78,15 @@ export default {
     transition: $base-transition;
   }
 
-  &:hover::after {
-    background: $accent-color;
+  &.right::after {
+    @include media-up(md) {
+      left: unset;
+      right: 0;
+    }
   }
 
-  &.left::after {
-    right: unset;
-    left: 0;
+  &:hover::after {
+    background: $accent-color;
   }
 
   &__header {
@@ -93,8 +95,9 @@ export default {
 
   &__title {
     padding: 16px 0;
-    text-align: right;
-    padding-right: 24px;
+    @include media-up(sm) {
+      padding-left: 24px;
+    }
     @include subtitle-font-medium;
 
     position: relative;
@@ -105,26 +108,34 @@ export default {
       bottom: 0;
       top: 0;
       margin: auto;
-      right: -16px;
-      width: 24px;
+      left: -24px;
+      width: 16px;
+      @include media-up(sm) {
+        left: -16px;
+        width: 24px;
+      }
       height: 2px;
       background: $accent-color;
       box-shadow: $accent-shadow-blurred;
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateX(-100px);
       transition: $base-transition;
     }
 
-    .left & {
-      text-align: left;
-      padding-left: 24px;
-      padding-right: 0;
+    .right & {
+      @include media-up(md) {
+        text-align: right;
+        padding-right: 24px;
+        padding-left: 0;
+      }
     }
 
-    .left &::before {
-      right: unset;
-      left: -16px;
-      transform: translateX(-100px);
+    .right &::before {
+      @include media-up(md) {
+        left: unset;
+        right: -16px;
+        transform: translateX(100px);
+      }
     }
 
     .active &::before {
@@ -134,23 +145,25 @@ export default {
   }
 
   &__arrow {
+    @include hide-down(sm);
     $size: 8px;
     display: block;
     position: absolute;
-    left: 24px;
-    top: 0;
+    right: 0;
+    top: 50%;
     bottom: 0;
-    margin: auto;
     width: $size;
     height: $size;
     border-right: 1px solid rgba($secondary-color, .5);
     border-bottom: 1px solid rgba($secondary-color, .5);
-    transform: translateY(-$size / 4) rotate(45deg);
+    transform: translateY(-$size / 2) rotate(45deg);
     transition: $base-transition;
 
-    .left & {
-      left: unset;
-      right: 24px;
+    .right & {
+      @include media-up(md) {
+        right: unset;
+        left: 0;
+      }
     }
 
     .active & {
@@ -164,7 +177,10 @@ export default {
 
   &__text {
     overflow: hidden;
-    padding: 16px 24px;
+    padding: 24px;
+    @include media-up(md) {
+      padding: 16px 24px;
+    }
     @include paragraph-font;
   }
 }

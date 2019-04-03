@@ -7,6 +7,7 @@ export default {
   navigation: [
     {
       title: 'Usługi',
+      hash: 'observation',
       submenu: true
     },
     {
@@ -115,7 +116,14 @@ export default {
     }
   ],
   bio: {
-    short: 'Detektyw, Certyfikowany Compliance Officer, zajmuje się wykrywaniem oszustw w organizacjach oraz zapobieganiem przestępczości gospodarczej i skarbowej. W Agencji odpowiedzialny również za planowanie i realizację działań detektywistycznych.'
+    short: 'Detektyw, Certyfikowany Compliance Officer, zajmuje się wykrywaniem oszustw w organizacjach oraz zapobieganiem przestępczości gospodarczej i skarbowej. W Agencji odpowiedzialny również za planowanie i realizację działań detektywistycznych.',
+    long: [
+      'Nazywam się Kamil Mikrut i jestem prywatnym detektywem (licencja nr 0001899). Chciałbym Państwu w kilku zdaniach przybliżyć wartości, którymi kieruję się w swojej trudnej i wymagającej pracy detektywa. Zapraszam do krótkiej lektury.',
+      'Kilka intensywnych lat pracy w zawodzie detektywa zaowocowało nawiązaniem przeze mnie wielu wartościowych relacji: z innymi detektywami, psychologami, dziennikarzami, specjalistami ds. bezpieczeństwa, byłymi funkcjonariuszami służb, prawnikami, a przede wszystkim - z zadowolonymi Klientami. To bezcenna reklama. Polecający mnie i moje usługi wiedzą, że zawsze daję z siebie 100 procent. Wiedzą też, że warto mi zaufać - ręczą za mnie swoim dobrym imieniem i reputacją, co jest dla mnie dużym wyróżnieniem i dodatkowym czynnikiem motywującym.',
+      'Zawód detektywa jest bardzo specyficznym i absorbującym zajęciem. Pracujemy dla podmiotów gospodarczych i osób prywatnych, które potrzebują pomocy “tu i teraz”. To oznacza, że oczekuje się od nas natychmiastowego wręcz zaangażowania oraz sprawnej komunikacji w toku trwania zlecenia detektywistycznego. Z doświadczenia wiem, że tylko osobiste (bezpośrednie) nadzorowanie spraw pozwala zwiększyć szansę na ich pozytywne, tj. korzystne dla Klienta zakończenie. To jednak wymaga czasu. Dlatego też przyjmuję jedynie wybrane sprawy - pracuję przede wszystkim dla Klientów z polecenia, którzy akceptują moje legalne metody pracy, zgadzają się z przygotowanym przeze mnie planem działania oraz dysponują odpowiednim budżetem. W zamian otrzymują mnie na wyłączność - gotowego do bezpiecznego, dyskretnego i skutecznego działania .',
+      'Swoje usługi oferuję zarówno podmiotom gospodarczym, jak i osobom prywatnym. Podpisanie umowy poprzedza wywiad przeprowadzony z potencjalnym Klientem oraz dokładna analiza zagadnienia, z którym przychodzi mi się zmierzyć. Współpracuję z wieloma specjalistami z różnych dziedzin: prawnikami, kryminologami, psychologami i innymi osobami gotowymi wesprzeć mnie i moich Klientów merytoryczną wiedzą na konkretny temat.',
+      'Pracuję tam, gdzie mogę Ci pomóc . Głównym obszarem moich działań jest Warszawa, województwo mazowieckie, ponieważ tu mieszkam i prowadzę działalność gospodarczą wpisaną do rejestru działalności regulowanej Ministerstwa Spraw Wewnętrznych i Administracji (RD-19/2016). Często realizuję sprawy także dla Klientów z Trójmiasta, Katowic i Krakowa.'
+    ]
   },
   map: {
     title: 'Obszar operacyjny',

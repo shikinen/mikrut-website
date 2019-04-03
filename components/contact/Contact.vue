@@ -5,6 +5,7 @@
         id="contact"
         :top="400"
         :title="$t('contact.title')"
+        right
       />
       <h4 class="subtitle-semibold" v-html="$t('contact.subtitle')"/>
       <base-button class="info__button" phone black/>
@@ -26,13 +27,26 @@ export default {
 
 <style lang="scss" scoped>
   .container {
-    padding: 96px 96px 80px;
+
     background: $secondary-color;
     color: $primary-color;
 
-    display: grid;
-    grid-template-columns: 384px 1fr;
-    grid-column-gap: 60px;
+    padding: 48px 24px;
+
+    @include media-up(sm) {
+      padding: 80px 48px;
+    }
+
+    @include media-up(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 60px;
+    }
+
+    @include media-up(lg) {
+      padding: 96px 96px 80px;
+    }
+
   }
 
   .form {
@@ -40,10 +54,15 @@ export default {
   }
 
   .info {
-    text-align: right;
+    margin-bottom: 48px;
     display: grid;
     grid-template-rows: repeat(2, min-content) 1fr;
-    grid-row-gap: 48px;
+    grid-row-gap: 24px;
+    @include media-up(md) {
+      text-align: right;
+      margin-bottom: 0;
+      grid-row-gap: 48px;
+    }
 
     &__button {
       align-self: end;

@@ -12,9 +12,6 @@
       />
       <h2 class="hero__subheading subtitle" v-html="$t('hero.subheading')"/>
       <div class="cta">
-        <p class="cta__title">
-          {{ $t('cta.call') }}
-        </p>
         <base-button phone-big/>
       </div>
       <social class="hero__social" vertical all/>
@@ -25,20 +22,11 @@
       autoplay
       playsinline
       muted
+      loop
     />
     <div class="hero__video-overlay"/>
   </section>
 </template>
-
-<script>
-import lax from 'lax.js'
-
-export default {
-  mounted () {
-    lax.addElement(this.$el) // add your element to lax when it mounts
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 $video-index: 1;
@@ -46,6 +34,7 @@ $overlay-index: 2;
 $content-index: 3;
 
 .hero {
+  padding-top: 48px;
   &__video {
     position: fixed;
     bottom: 0;
@@ -63,7 +52,7 @@ $content-index: 3;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh + 48px);
     z-index: $overlay-index;
     background-image: linear-gradient(rgba($primary-color, .3), rgba($primary-color, 1));
   }
@@ -73,12 +62,29 @@ $content-index: 3;
     z-index: $content-index;
     height: 100vh;
     display: grid;
-    grid-template-columns: 40px [full-start inner-start] 1fr [inner-end full-end] 40px;
-    @include media-up(xxlg) {
-      grid-template-columns: 40px [full-start] 1fr [inner-start] 968px [inner-end] 1fr [full-end] 40px;
+
+    grid-template-columns: $container-padding-sm [full-start inner-start] 1fr [inner-end full-end] $container-padding-sm;
+
+    @include media-up(sm) {
+      grid-template-columns: $container-padding [full-start inner-start] 1fr [inner-end full-end] $container-padding;
     }
+
+    @include media-up(xxlg) {
+      grid-template-columns: $container-padding [full-start] 1fr [inner-start] 968px [inner-end] 1fr [full-end] $container-padding;
+    }
+
     grid-template-rows: repeat(4, max-content);
-    grid-row-gap: 16px;
+
+    grid-row-gap: 24px;
+
+    @include media-up(sm) {
+      grid-row-gap: 48px;
+    }
+
+    @include media-up(md) {
+      grid-row-gap: 16px;
+    }
+
     align-content: center;
     // background-image: url('/img/hero.jpg');
     // background-size: contain;
@@ -86,31 +92,56 @@ $content-index: 3;
     // background-repeat: no-repeat;
   }
 
-
   &__heading {
     grid-column: inner;
     grid-row: 1 / 2;
     align-self: center;
 
-    font-size: 96px;
+    font-size: 60px;
+
+    @include media-up(sm) {
+      font-size: 80px;
+    }
+
+    @include media-up(md) {
+      font-size: 96px;
+    }
+
     line-height: 1.2;
     font-weight: 700;
     position: relative;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   &__subheading {
+    font-style: italic;
+    font-weight: 500;
+    @include hide-down(sm);
     grid-column: inner;
     grid-row: 2 / 3;
-    text-align: right;
+    @include media-up(md) {
+      text-align: left;
+      margin-bottom: 0;
+    }
     align-self: start;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
     position: relative;
     &::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      right: -16px;
+      bottom: -24%;
+      left: 8%;
       transform: translateY(80%);
+      @include media-up(md) {
+      }
+
       display: block;
       width: 194px;
       height: 96px;
@@ -122,11 +153,12 @@ $content-index: 3;
   }
 
   &__social {
-
+    @include hide-down(md);
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-    align-self: center;
     justify-self: end;
+    align-self: center;
+
     @include media-up(xxlg) {
       grid-column: 4 / 5;
     }
@@ -134,8 +166,13 @@ $content-index: 3;
 }
 
 .cta {
-    grid-column: inner;
-    grid-row: 3 / 4;
+  grid-column: inner;
+  grid-row: 3 / 4;
+  justify-self: end;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
   &__title {
     margin-bottom: 16px;

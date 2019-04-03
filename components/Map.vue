@@ -1,24 +1,20 @@
 <template>
-  <section class="map lax">
-    <div>
+  <section-component>
+    <template slot="main">
       <section-title
         id="map"
         :title="$t('map.title')"
-        class="lax"
-        data-lax-preset="rightToLeft-.1"
         underline
         left
       />
       <p
-        class="map__text subtitle-medium lax"
-        data-lax-preset="fadeOut"
+        class="map__text subtitle-medium"
       >
         {{ $t('map.description') }}
       </p>
-    </div>
+    </template>
     <svg
-      width="465px"
-      height="465px"
+      slot="aside"
       viewBox="0 0 465 465"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -119,35 +115,26 @@
         </g>
       </g>
     </svg>
-  </section>
+  </section-component>
 </template>
 
 <script>
+import SectionComponent from '@/components/base/Section'
 import SectionTitle from '@/components/base/SectionTitle'
-import lax from 'lax.js'
 
 export default {
   components: {
+    SectionComponent,
     SectionTitle
-  },
-  mounted () {
-    lax.addElement(this.$el) // add your element to lax when it mounts
   }
 }
 </script>
 
 <style lang="scss" scoped>
   .map {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 16px;
-
     &__text {
-      margin-top: 96px;
-      margin-bottom: 72px;
-      max-width: 378px;
+      @include margin-lg(top);
     }
-
     &__city {
       cursor: pointer;
       fill: $secondary-color;
@@ -180,11 +167,6 @@ export default {
   }
 
   svg > use {
-    stroke: red;
     cursor: pointer;
-
-    &:hover {
-      stroke: blue;
-    }
   }
 </style>
