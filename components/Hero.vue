@@ -33,6 +33,12 @@ $video-index: 1;
 $overlay-index: 2;
 $content-index: 3;
 
+@mixin hero-animation($animation-name) {
+  animation-name: $animation-name;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .hero {
   padding-top: 48px;
   &__video {
@@ -111,9 +117,7 @@ $content-index: 3;
     font-weight: 700;
     position: relative;
 
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    @include hero-animation(moveInLeft);
   }
 
   &__subheading {
@@ -128,9 +132,7 @@ $content-index: 3;
     }
     align-self: start;
 
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    @include hero-animation(moveInLeft);
 
     position: relative;
     &::after {
@@ -170,9 +172,7 @@ $content-index: 3;
   grid-row: 3 / 4;
   justify-self: end;
 
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  @include hero-animation(moveInRight);
 
   &__title {
     margin-bottom: 16px;
