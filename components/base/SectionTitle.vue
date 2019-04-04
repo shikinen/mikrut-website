@@ -5,7 +5,6 @@
     data-aos-easing="ease"
     data-aos-duration="800"
     data-aos-delay="200"
-    data-aos-once="true"
   >
     <h3 :class="{ underline, right }" class="section-title">
       {{ title }}
