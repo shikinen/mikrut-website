@@ -6,7 +6,7 @@
     <div @click="$store.commit('openPopup')">
       <base-button text="Więcej o Detektywie" />
     </div>
-    <span class="undertext lax" data-lax-preset="leftToRight">ustalenie dochodów ochrona osobista poszukiwania zdrada rozwód alimenty ustalenie dochodów</span>
+    <span class="undertext lax" data-lax-preset="leftToRight">ustalenie dochodów obserwacja zdrada rozwód alimenty ustalenie dochodów</span>
   </section>
 </template>
 
