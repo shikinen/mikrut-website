@@ -1,8 +1,7 @@
 <template>
-  <section-component>
+  <section-component id="bio">
     <template slot="main">
       <section-title
-        id="bio"
         title="Kamil Mikrut"
         underline
         left

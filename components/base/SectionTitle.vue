@@ -1,15 +1,17 @@
 <template>
-  <div
-    class="wrapper"
-    :data-aos="right ? 'fade-left' : 'fade-right'"
-    data-aos-easing="ease"
-    data-aos-duration="800"
-    data-aos-delay="200"
-  >
-    <h3 :class="{ underline, right }" class="section-title">
+  <div class="wrapper">
+    <span :id="id" class="scroll-anchor"/>
+    <h3
+      :class="{ underline, right }"
+      class="section-title"
+      :data-aos="right ? 'fade-left' : 'fade-right'"
+      data-aos-easing="ease-in-out-quart"
+      data-aos-duration="500"
+      data-aos-delay="100"
+      data-aos-once="true"
+    >
       {{ title }}
     </h3>
-    <a :id="id" :style="{ top: -top + 'px' }" class="scroll-anchor"/>
   </div>
 </template>
 
@@ -26,7 +28,7 @@ export default {
     },
     top: {
       type: Number,
-      default: 296
+      default: 96
     },
     underline: {
       type: Boolean,
@@ -41,6 +43,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .scroll-anchor {
+    display: block;
+    margin-top: -$header-offset;
+    height: $header-offset;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   .section-title {
     font-size: 48px;
     font-weight: 700;
@@ -56,14 +66,12 @@ export default {
     @include media-up(lg) {
       font-size: 80px;
     }
-
-
   }
 
   .underline {
     position: relative;
     z-index: 2;
-    &::before {
+    &::after {
       content: '';
       display: block;
       position: absolute;
@@ -86,7 +94,7 @@ export default {
       box-shadow: $accent-shadow-blurred;
     }
 
-    &.right::before {
+    &.right::after {
       @include media-up(md) {
         left: unset;
         right: 0;
@@ -97,14 +105,5 @@ export default {
         transform: translateX(50%);
       }
     }
-  }
-
-  $header-offset: 296px;
-  .scroll-anchor {
-    display: inline-block;
-    position: relative;
-    top: -$header-offset;
-    left: 0;
-    visibility: hidden;
   }
 </style>

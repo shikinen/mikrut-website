@@ -13,7 +13,7 @@
         <nuxt-link
           v-else
           class="text-link"
-          :to="{ path: '/', hash: item.hash }"
+          to="/#bio"
         >
           {{ item.title }}
         </nuxt-link>

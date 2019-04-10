@@ -32,10 +32,6 @@
       />
       <blog
         class="inner"
-        data-aos="fade"
-        data-aos-duration="1000"
-        data-aos-easing="ease"
-        data-aos-once="true"
       />
       <bio
         class="inner"

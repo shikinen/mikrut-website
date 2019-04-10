@@ -42,6 +42,10 @@ export default {
       type: String,
       default: ''
     },
+    top: {
+      type: Number,
+      default: 296
+    },
     items: {
       type: Array,
       default: () => []
@@ -102,4 +106,6 @@ export default {
       @include margin-lg;
     }
   }
+
+  $header-offset: 296px;
 </style>
