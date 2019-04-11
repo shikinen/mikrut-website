@@ -5,13 +5,18 @@
         :id="id"
         :title="title"
         :right="right"
+
         class="service__title"
         underline
       />
-      <p v-if="text" class="subtitle-medium">
+      <p v-if="text" class="service__text subtitle-medium">
         {{ text }}
       </p>
-      <accordion v-else :content="items" :right="right"/>
+      <accordion
+        :content="items"
+        :right="right"
+        :list="list"
+      />
     </div>
     <img
       v-lazy="`/img/${id}-1x.jpg`"
@@ -51,6 +56,10 @@ export default {
       default: () => []
     },
     right: {
+      type: Boolean,
+      default: false
+    },
+    list: {
       type: Boolean,
       default: false
     },
@@ -104,6 +113,10 @@ export default {
 
     &__title {
       @include margin-lg;
+    }
+
+    &__text {
+      margin-bottom: 16px;
     }
   }
 

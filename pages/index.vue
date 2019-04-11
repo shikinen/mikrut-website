@@ -17,6 +17,7 @@
         :items="service.items"
         :text="service.text"
         :right="index % 2 === 0"
+        :list="service.list"
         class="inner"
         data-aos="fade"
         data-aos-duration="1000"

@@ -1,5 +1,5 @@
 <template>
-  <li :id="item.id" class="accordion-item" :class="{ 'active': item.active, right }">
+  <li :id="item.id" class="accordion-item" :class="{ 'active': item.active, right, list }">
     <header class="accordion-item__header">
       <h4 class="accordion-item__title" @click="toggle">
         {{ item.title }}
@@ -13,7 +13,7 @@
       @before-leave="startTransition"
       @after-leave="endTransition"
     >
-      <div v-if="item.active" class="accordion-item__text-wrapper">
+      <div v-if="item.active && item.text" class="accordion-item__text-wrapper">
         <p class="accordion-item__text">
           {{ item.text }}
         </p>
@@ -34,6 +34,10 @@ export default {
       default: false
     },
     multiple: {
+      type: Boolean,
+      default: false
+    },
+    list: {
       type: Boolean,
       default: false
     }
@@ -64,6 +68,10 @@ export default {
 
 .accordion-item {
   cursor: pointer;
+
+  &.list {
+    cursor: default;
+  }
 
   position: relative;
   &::after {
@@ -96,7 +104,7 @@ export default {
   &__title {
     padding: 16px 0;
     @include media-up(sm) {
-      padding-left: 24px;
+      padding-left: 24px 0 4px;
     }
     @include subtitle-font-medium;
 
@@ -143,6 +151,10 @@ export default {
       opacity: 1;
       transform: translateX(0);
     }
+
+    .list &::before {
+      opacity: 0;
+    }
   }
 
   &__arrow {
@@ -169,6 +181,10 @@ export default {
 
     .active & {
       transform: translateY($size / 4) rotate(225deg);
+    }
+
+    .list & {
+      display: none;
     }
   }
 

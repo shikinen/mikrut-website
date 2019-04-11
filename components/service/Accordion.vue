@@ -6,6 +6,7 @@
       :multiple="multiple"
       :item="item"
       :right="right"
+      :list="list"
     />
   </ul>
 </template>
@@ -26,6 +27,10 @@ export default {
       default: false
     },
     right: {
+      type: Boolean,
+      default: false
+    },
+    list: {
       type: Boolean,
       default: false
     }

@@ -57,6 +57,10 @@ export default {
         {
           title: 'monitorowanie działań konkurencji, kontrahentów i partnerów biznesowych',
           text: 'Informacja w biznesie daje dużą przewagę – aby ją jednak uzyskać, zdobyte informacje powinny być wiarygodne. W toku podejmowanych przeze mnie czynności weryfikuję postawione przez Zlecających tezy.'
+        },
+        {
+          title: 'sprawdzenia pracownicze',
+          text: 'Działanie pracowników na szkodę przedsiębiorstwa ma różne oblicza. Najczęściej jest to kradzież towaru, kradzież poufnych informacji (w tym know how), nie stosowanie się do zakazu konkurencji, przewlekłość zwolnienia L4, przekłamywanie w CV, zatajanie niewygodnych faktów z przeszłości (poprzednich miejsc zatrudnienia) i inne. Wiem, jak pomóc bronić się przedsiębiorcom przed nielojalnością pracowników.'
         }
       ]
     },
@@ -65,26 +69,39 @@ export default {
       id: "counterobservation",
       items: [
         {
-          title: 'sprawdzenia pracownicze',
-          text: 'Działanie pracowników na szkodę przedsiębiorstwa ma różne oblicza. Najczęściej jest to kradzież towaru, kradzież poufnych informacji (w tym know how), nie stosowanie się do zakazu konkurencji, przewlekłość zwolnienia L4, przekłamywanie w CV, zatajanie niewygodnych faktów z przeszłości (poprzednich miejsc zatrudnienia) i inne. Wiem, jak pomóc bronić się przedsiębiorcom przed nielojalnością pracowników.'
+          title: 'zabezpieczenie spotkań biznesowych',
+          text: 'Klasyczna kontrobserwacja mająca na celu wykrycie i zidentyfikowanie potencjalnej obserwacji. Dostatecznie szybko pozyskana wiedza o inwigilacji pozwoli zminimalizować ryzyko popełnienia błędów, które mogą zaważyć na reputacji, pozycji czy sytuacji materialno-prawnej obserwowanego..'
         },
         {
-          title: 'zabezpieczenie spotkań biznesowych',
+          title: 'wykrywanie inwigilacji bezpośredniej',
           text: 'Organizacja dyskretnego, a przede wszystkim bezpiecznego spotkania, którego nie zakłóci nikt postronny, a przebieg rozmowy będzie znany tylko jej uczestnikom.'
+        },
+        {
+          title: 'bezpieczny transport – Save Drive',
+          text: 'Organizacja niejawnego i bezpiecznego przewozu osoby lub osób z punktu A do punktu B, poprzedzonego wieloetapowym przygotowaniem (rozpoznanie miejsca odbioru, trasy i zagrożeń mogących pojawić się w trakcie przewozu). Usługa przewidziana zarówno dla ludzi biznesu, jak również osób prywatnych.'
         }
       ]
     },
     {
       title: 'Wykrywanie urządzeń',
       id: "detection",
+      list: true,
       items: [
         {
-          title: 'wykrywanie inwigilacji bezpośredniej',
-          text: 'Klasyczna kontrobserwacja mająca na celu wykrycie i zidentyfikowanie potencjalnej obserwacji. Dostatecznie szybko pozyskana wiedza o inwigilacji pozwoli zminimalizować ryzyko popełnienia błędów, które mogą zaważyć na reputacji, pozycji czy sytuacji materialno-prawnej obserwowanego.'
+          title: 'urządzenia podsłuchowe',
+          text: ''
         },
         {
-          title: 'bezpieczny transport',
-          text: 'Organizacja niejawnego i bezpiecznego przewozu osoby lub osób z punktu A do punktu B, poprzedzonego wieloetapowym przygotowaniem (rozpoznanie miejsca odbioru, trasy i zagrożeń mogących pojawić się w trakcie przewozu). Usługa przewidziana zarówno dla ludzi biznesu, jak również osób prywatnych.'
+          title: 'urządzenia gps',
+          text: ''
+        },
+        {
+          title: 'aplikacje szpiegujące w telefonach',
+          text: ''
+        },
+        {
+          title: 'detekcja urządzeń szpiegujących w firmie, biurze, mieszkaniu',
+          text: ''
         }
       ]
     },
@@ -113,7 +130,14 @@ export default {
     {
       title: 'Inne',
       id: "other",
-      text: 'Pomagam skutecznie rozwiązywać sprawy, których charakter i specyfika mogą wydawać się niestandardowe. W pierwszej kolejności krytycznie analizuję zagadnienie razem ze Zlecającym oraz specjalistami z innych dziedzin, aby móc przedstawić bezpieczne i realne rozwiązanie problemu. Działamy zawsze zgodnie z prawem.'
+      list: true,
+      text: 'Pomagam skutecznie rozwiązywać sprawy, których charakter i specyfika mogą wydawać się niestandardowe. W pierwszej kolejności krytycznie analizuję zagadnienie razem ze Zlecającym oraz specjalistami z innych dziedzin, aby móc przedstawić bezpieczne i realne rozwiązanie problemu. Działamy zawsze zgodnie z prawem.',
+      items: [
+        {
+          title: 'Stalking',
+          text: ''
+        },
+      ]
     }
   ],
   bio: {
