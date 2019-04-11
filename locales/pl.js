@@ -39,7 +39,7 @@ export default {
   },
   hero: {
     heading: 'Detektyw<br>Mikrut',
-    subheading: 'Nie kreujemy się na najlepszych<br>Po prostu robimy swoje –<br>Dyskretnie i skutecznie!'
+    subheading: 'Nie kreujemy się na najlepszych!<br>Po prostu robimy swoje –<br>dyskretnie i skutecznie.'
   },
   services: [
     {

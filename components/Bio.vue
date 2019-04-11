@@ -11,6 +11,7 @@
         {{ $t('bio.short') }}
       </p>
       <info concession license/>
+      <link-button class="bio-button" text="Więcej o Detektywie" :to="localePath('about')"/>
     </template>
     <img
       slot="aside"
@@ -38,13 +39,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
   .text {
     @include subtitle-font-medium;
     @include margin-lg(top);
     margin-bottom: 48px;
   }
+
   .img {
     width: 100%;
+  }
+
+  .bio-button {
+    margin-top: 16px;
   }
 </style>

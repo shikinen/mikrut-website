@@ -2,9 +2,16 @@
   <div>
     <hero/>
     <main class="main">
-      <intro
+      <!-- <intro
         class="inner"
         data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-easing="ease"
+        data-aos-once="true"
+      /> -->
+      <bio
+        class="inner"
+        data-aos="fade"
         data-aos-duration="1000"
         data-aos-easing="ease"
         data-aos-once="true"
@@ -34,13 +41,6 @@
       <blog
         class="inner"
       />
-      <bio
-        class="inner"
-        data-aos="fade"
-        data-aos-duration="1000"
-        data-aos-easing="ease"
-        data-aos-once="true"
-      />
       <contact
         class="overflow"
         data-aos="fade"
@@ -54,7 +54,6 @@
 
 <script>
 import Hero from '@/components/Hero'
-import Intro from '@/components/Intro'
 import Service from '@/components/service/Service'
 import MapSection from '@/components/Map'
 import Blog from '@/components/Blog'
@@ -64,7 +63,6 @@ import Contact from '@/components/contact/Contact'
 export default {
   components: {
     Hero,
-    Intro,
     Service,
     MapSection,
     Blog,
