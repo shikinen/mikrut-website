@@ -1,11 +1,12 @@
 <template>
   <div class="button__wrapper">
-    <span v-if="phone || phoneBig" :class="{ 'bigger-font': phoneBig }" class="button__phone">{{ phoneBig ? $t('general.phone-prefix') : $t('cta.call') }}</span>
+    <span :class="{ 'bigger-font': phoneBig }" class="button__phone">{{ phoneBig ? $t('general.phone-prefix') : $t('cta.call') }}</span>
     <a
-      :class="{ 'button--small': small, 'button--phone': phone, 'button--inline': inline, 'bigger-font': phoneBig }"
-      class="button"
+      :class="{ 'button--small': small, 'bigger-font': phoneBig }"
+      class="button button--phone"
+      :href="`tel:${$t('general.phone-href')}`"
     >
-      {{ phoneBig ? $t('general.phone-short') : phone ? $t('general.phone-full') : text }}
+      {{ phoneBig ? $t('general.phone-short') : $t('general.phone-full') }}
     </a>
     <svg
       width="24px"
@@ -51,10 +52,6 @@ export default {
       type: String,
       default: ''
     },
-    phone: {
-      type: Boolean,
-      default: false
-    },
     phoneBig: {
       type: Boolean,
       default: false
@@ -77,70 +74,8 @@ export default {
 
 <style lang="scss" scoped>
   .button {
-    @include base-button;
-    background-color: $accent-color;
-    box-shadow: $accent-shadow-blurred;
-    color: $secondary-color;
-    padding: 16px 8px;
-
-    font-size: 18px;
-    font-weight: 800;
-
-    &, + svg {
-      transition: $base-transition;
-    }
-
-    &:hover {
-      + svg {
-        transform: translateX(8px);
-      }
-    }
-    &:active {
-      transform: scale(.98);
-    }
-
-    &--small {
-      padding: 16px 16px;
-    }
-
-    &--phone {
-      font-size: 16px;
-    }
-
-    &--inline {
-      padding: 0;
-      background: transparent;
-      box-shadow: none;
-      @include text-link;
-      &:hover {
-        box-shadow: none;
-        transform: none;
-      }
-    }
-
-    &__arrow {
-      stroke: #fff;
-
-      &--black {
-        stroke: #000;
-
-        &:active {
-          box-shadow: $primary-shadow-small;
-        }
-
-        &:hover {
-          background-color: black;
-          box-shadow: $primary-shadow;
-        }
-      }
-    }
-
-    &__phone {
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-right: 8px;
-    }
-}
+    @include button;
+  }
 
 .bigger-font {
   font-size: 24px;

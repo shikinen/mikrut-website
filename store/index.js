@@ -1,7 +1,6 @@
 const state = () => ({
   isMenuVisible: false,
-  isMobileMenuVisible: false,
-  isPopupVisible: false
+  isMobileMenuVisible: false
 })
 
 const mutations = {
@@ -16,12 +15,6 @@ const mutations = {
   },
   closeMobileMenu (state) {
     state.isMobileMenuVisible = false
-  },
-  openPopup (state) {
-    state.isPopupVisible = true
-  },
-  closePopup (state) {
-    state.isPopupVisible = false
   }
 }
 

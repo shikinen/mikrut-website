@@ -15,7 +15,7 @@
       id="message"
       :placeholder="$t('contact.phone-placeholder')"
     />
-    <base-button
+    <link-button
       class="form__button"
       :text="$t('cta.send')"
       small

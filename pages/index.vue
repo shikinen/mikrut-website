@@ -48,7 +48,6 @@
         data-aos-once="true"
       />
     </main>
-    <popup/>
   </div>
 </template>
 
@@ -60,7 +59,6 @@ import MapSection from '@/components/Map'
 import Blog from '@/components/Blog'
 import Bio from '@/components/Bio'
 import Contact from '@/components/contact/Contact'
-import Popup from '@/components/Popup'
 
 export default {
   components: {
@@ -70,8 +68,7 @@ export default {
     MapSection,
     Blog,
     Bio,
-    Contact,
-    Popup
+    Contact
   }
 }
 </script>

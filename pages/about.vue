@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     lol
-    <div id="lol"></div>
+    <div id="lol"/>
   </div>
 </template>
 

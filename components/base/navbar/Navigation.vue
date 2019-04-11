@@ -13,7 +13,7 @@
         <nuxt-link
           v-else
           class="text-link"
-          to="/#bio"
+          :to="localePath('index') + `#${item.hash}`"
         >
           {{ item.title }}
         </nuxt-link>
@@ -21,7 +21,7 @@
     </ul>
     <p class="navigation__phone">
       <img class="navigation__phone--icon" src="/img/phone.svg">
-      <a class="text-link" href="tel:0048519734926">
+      <a class="text-link" :href="`tel:${$t('general.phone-href')}`">
         {{ $t('cta.call') }} {{ $t('general.phone-full') }}
       </a>
     </p>

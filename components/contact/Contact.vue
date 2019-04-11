@@ -8,7 +8,7 @@
         right
       />
       <h4 class="subtitle-semibold" v-html="$t('contact.subtitle')"/>
-      <base-button class="info__button" phone black/>
+      <phone-button class="info__button" black/>
     </div>
     <contact-form class="form"/>
   </section>

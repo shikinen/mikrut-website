@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="setion-title__wrapper">
     <span :id="id" class="scroll-anchor"/>
     <h3
       :class="{ underline, right }"

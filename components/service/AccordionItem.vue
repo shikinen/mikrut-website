@@ -102,6 +102,7 @@ export default {
 
     position: relative;
     &::before {
+      @include hide-down(sm);
       content: '';
       position: absolute;
       z-index: -1;
@@ -177,10 +178,7 @@ export default {
 
   &__text {
     overflow: hidden;
-    padding: 24px;
-    @include media-up(md) {
-      padding: 16px 24px;
-    }
+    padding: 0 24px 24px;
     @include paragraph-font;
   }
 }

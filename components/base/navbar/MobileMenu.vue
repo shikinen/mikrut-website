@@ -15,7 +15,7 @@
           </nuxt-link>
         </li>
       </ul>
-      <base-button phone-big />
+      <phone-button phone-big />
     </div>
   </aside>
 </template>

@@ -3,6 +3,7 @@ export default {
     'phone-full': '+48 519 734 926',
     'phone-short': '519 734 926',
     'phone-prefix': '+48',
+    'phone-href': '0048519734926'
   },
   navigation: [
     {

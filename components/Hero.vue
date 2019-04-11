@@ -12,7 +12,7 @@
       />
       <h2 class="hero__subheading subtitle" v-html="$t('hero.subheading')"/>
       <div class="cta">
-        <base-button phone-big/>
+        <phone-button phone-big/>
       </div>
       <social class="hero__social" vertical all/>
     </div>

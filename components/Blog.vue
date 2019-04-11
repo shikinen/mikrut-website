@@ -7,14 +7,14 @@
         :title="$t('blog.title')"
         right
       />
-      <base-button class="blog__button" :text="$t('cta.read-more')"/>
+      <link-button class="blog__button" :text="$t('cta.read-more')"/>
     </div>
     <ul class="blog__entries">
       <li v-for="(entry, index) in mockEntries" :key="index" class="blog__entry">
         <h4 class="blog__entry-title">
           {{ entry }}
         </h4>
-        <base-button class="blog__entry-button" :text="$t('cta.read')" inline/>
+        <link-button class="blog__entry-button" :text="$t('cta.read')" inline/>
       </li>
     </ul>
   </section>
