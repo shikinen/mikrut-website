@@ -79,9 +79,25 @@ export default {
         margin-bottom: 48px;
       }
 
+      cursor: pointer;
+
       transition: $base-transition;
-      &:hover {
-        color: $accent-color;
+
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 80px;
+        height: 1px;
+        background: rgba($secondary-color, .2);
+        transition: $base-transition;
+      }
+
+      &:hover::after {
+        background: $accent-color;
       }
     }
 

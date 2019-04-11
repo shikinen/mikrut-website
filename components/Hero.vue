@@ -11,9 +11,7 @@
         v-html="$t('hero.heading')"
       />
       <h2 class="hero__subheading subtitle" v-html="$t('hero.subheading')"/>
-      <div class="cta">
-        <phone-button phone-big/>
-      </div>
+      <phone-button class="cta" phone-big/>
       <social class="hero__social" vertical all/>
     </div>
     <video
@@ -170,7 +168,9 @@ $content-index: 3;
 .cta {
   grid-column: inner;
   grid-row: 3 / 4;
-  justify-self: end;
+  @include media-up(sm) {
+    justify-self: end;
+  }
 
   @include hero-animation(moveInRight);
 

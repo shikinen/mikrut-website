@@ -11,7 +11,7 @@
       data-aos-mirror="true"
       data-aos-once="false"
     >
-      {{ title }} {{ isMobile ? 'fade-right' : right ? 'fade-left' : 'fade-right' }}
+      {{ title }}
     </h3>
   </div>
 </template>
