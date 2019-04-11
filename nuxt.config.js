@@ -32,7 +32,7 @@ export default {
   */
   router: {
     scrollBehavior(to) {
-      if (to.hash && hashedEl) {
+      if (to.hash && document.querySelector(to.hash)) {
         return window.scrollTo({ top: document.querySelector(to.hash).offsetTop + window.innerHeight, behavior: 'smooth' })
       }
       return new Promise(resolve => {
