@@ -87,7 +87,6 @@ export default {
     @include media-up(xxlg) {
       grid-template-columns: $container-padding [full-start] 1fr [overflow-start] 84px [inner-start] 968px [inner-end] 84px [overflow-end] 1fr [full-end] $container-padding;
     }
-    padding: 196px 0;
 
     grid-row-gap: 96px;
     padding: 144px 0;

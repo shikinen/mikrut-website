@@ -23,9 +23,15 @@ a {
 
 
 h1 {
-  font-size: 96px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
+  @include media-up(sm) {
+    font-size: 64px;
+  }
+  @include media-up(sm) {
+    font-size: 80px;
+  }
 }
 
 .paragraph {

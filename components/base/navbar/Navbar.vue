@@ -1,6 +1,6 @@
 <template>
   <header :class="{ 'header--scrolled': scrollPosition > 20 }" class="header" @mouseleave="$store.commit('closeMenu')">
-    <nuxt-link :to="localePath('about') + '#lol'">
+    <nuxt-link :to="localePath('index')">
       <logo class="header__logo"/>
     </nuxt-link>
     <navigation class="header__navigation"/>

@@ -142,6 +142,7 @@ export default {
   ],
   bio: {
     short: 'Detektyw, Certyfikowany Compliance Officer, zajmuje się wykrywaniem oszustw w organizacjach oraz zapobieganiem przestępczości gospodarczej i skarbowej. W Agencji odpowiedzialny również za planowanie i realizację działań detektywistycznych.',
+    title: 'Detektyw Kamil Mikrut',
     long: [
       'Nazywam się Kamil Mikrut i jestem prywatnym detektywem (licencja nr 0001899). Chciałbym Państwu w kilku zdaniach przybliżyć wartości, którymi kieruję się w swojej trudnej i wymagającej pracy detektywa. Zapraszam do krótkiej lektury.',
       'Kilka intensywnych lat pracy w zawodzie detektywa zaowocowało nawiązaniem przeze mnie wielu wartościowych relacji: z innymi detektywami, psychologami, dziennikarzami, specjalistami ds. bezpieczeństwa, byłymi funkcjonariuszami służb, prawnikami, a przede wszystkim - z zadowolonymi Klientami. To bezcenna reklama. Polecający mnie i moje usługi wiedzą, że zawsze daję z siebie 100 procent. Wiedzą też, że warto mi zaufać - ręczą za mnie swoim dobrym imieniem i reputacją, co jest dla mnie dużym wyróżnieniem i dodatkowym czynnikiem motywującym.',
