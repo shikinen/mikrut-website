@@ -4,14 +4,14 @@
     <h3
       :class="{ underline, right }"
       class="section-title"
-      :data-aos="isRight ? 'fade-left' : 'fade-right'"
+      :data-aos="isMobile ? 'fade-right' : right ? 'fade-left' : 'fade-right'"
       data-aos-easing="ease-in-out-quart"
       data-aos-duration="500"
       data-aos-delay="100"
       data-aos-mirror="true"
       data-aos-once="false"
     >
-      {{ title }}
+      {{ title }} {{ isMobile ? 'fade-right' : right ? 'fade-left' : 'fade-right' }}
     </h3>
   </div>
 </template>
@@ -41,7 +41,7 @@ export default {
     }
   },
   computed: {
-    isRight () {
+    isMobile () {
       return this.$mq === 'sm'
     }
   }
