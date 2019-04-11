@@ -2,14 +2,14 @@
   <section class="intro">
     <div class="intro__info">
       <p class="content">
-      Działam na terenie całego kraju, oferując szeroką gamę usług związanych z detektywistyką jak też ochroną osobistą, obserwacją, obrotem gospodarczym, czy ustalaniem dochodu.
+        Działam na terenie całego kraju, oferując szeroką gamę usług związanych z detektywistyką jak też ochroną osobistą, obserwacją, obrotem gospodarczym, czy ustalaniem dochodu.
       </p>
       <link-button text="Więcej o Detektywie" :to="localePath('about')"/>
     </div>
     <img
-      v-lazy="'/img/intro2-1x.png'"
-      data-srcset="/img/intro2-1x.png 1x,
-                   /img/intro2-2x.png 2x,"
+      v-lazy="'/img/intro-1x.png'"
+      data-srcset="/img/intro-1x.png 1x,
+                   /img/intro-2x.png 2x,"
       class="intro__img"
     >
     <span class="undertext lax" data-lax-preset="leftToRight">ustalenie dochodów obserwacja zdrada rozwód alimenty ustalenie dochodów</span>

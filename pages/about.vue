@@ -1,13 +1,14 @@
 <template>
   <main class="main">
-    <h1 class="title">{{ $t('bio.title') }}</h1>
+    <h1 class="title">
+      {{ $t('bio.title') }}
+    </h1>
     <p v-for="(paragraph, index) in $t('bio.long')" :key="index" class="paragraph">
       {{ paragraph }}
     </p>
     <div class="signature__wrapper">
       <img v-lazy="'/img/signature.png'" class="signature">
     </div>
-
   </main>
 </template>
 

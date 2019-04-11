@@ -32,21 +32,15 @@ export default {
   */
   router: {
     scrollBehavior(to) {
-      if (to.hash && document.querySelector(to.hash)) {
-        return window.scrollTo({ top: document.querySelector(to.hash).offsetTop + window.innerHeight, behavior: 'smooth' });
+      if (to.hash && hashedEl) {
+        return window.scrollTo({ top: document.querySelector(to.hash).offsetTop + window.innerHeight, behavior: 'smooth' })
       }
-      let position = false
       return new Promise(resolve => {
-        // wait for the out transition to complete (if necessary)
         window.$nuxt.$once('triggerScroll', () => {
-          // coords will be used if no selector is provided,
-          // or if the selector didn't match any element.
           if (to.hash && document.querySelector(to.hash)) {
-            // scroll to anchor by returning the selector
-            // return window.scrollTo({ top: document.querySelector(to.hash).offsetTop + window.innerHeight, behavior: 'smooth' });
             resolve({ x: 0, y: document.querySelector(to.hash).offsetTop + window.innerHeight })
           }
-          return window.scrollTo({ top: 0, behavior: 'smooth' });
+          return window.scrollTo({ top: 0 });
         })
       })
     }
