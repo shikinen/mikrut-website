@@ -72,7 +72,8 @@ export default {
     '~plugins/vue-lazyload',
     '~plugins/directives',
     { src:'~/plugins/lax.js', ssr: false },
-    { src: "~/plugins/aos", ssr: false }
+    { src: "~/plugins/aos", ssr: false },
+    { src: '~plugins/vue-mq', ssr: false }
   ],
 
   /*

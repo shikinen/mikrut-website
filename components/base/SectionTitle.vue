@@ -4,10 +4,11 @@
     <h3
       :class="{ underline, right }"
       class="section-title"
-      :data-aos="right ? 'fade-left' : 'fade-right'"
+      :data-aos="isRight ? 'fade-left' : 'fade-right'"
       data-aos-easing="ease-in-out-quart"
       data-aos-duration="500"
       data-aos-delay="100"
+      data-aos-mirror="true"
       data-aos-once="false"
     >
       {{ title }}
@@ -37,6 +38,11 @@ export default {
     right: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    isRight () {
+      return this.$mq === 'sm'
     }
   }
 }
