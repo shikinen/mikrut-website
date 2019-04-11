@@ -12,6 +12,7 @@
       >
         {{ $t('map.description') }}
       </p>
+      <phone-button class="map__button"/>
     </template>
     <svg
       slot="aside"
@@ -132,9 +133,11 @@ export default {
 
 <style lang="scss" scoped>
   .map {
-    &__text {
+    &__text,
+    &__button {
       @include margin-lg(top);
     }
+
     &__city {
       cursor: pointer;
       fill: $secondary-color;
