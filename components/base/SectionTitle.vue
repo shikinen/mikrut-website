@@ -8,7 +8,7 @@
       data-aos-easing="ease-in-out-quart"
       data-aos-duration="500"
       data-aos-delay="100"
-      data-aos-once="true"
+      data-aos-once="false"
     >
       {{ title }}
     </h3>

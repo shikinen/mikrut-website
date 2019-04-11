@@ -9,12 +9,7 @@
 </template>
 
 <script>
-import lax from 'lax.js'
-export default {
-  mounted () {
-    lax.addElement(this.$el) // add your element to lax when it mounts
-  }
-}
+
 </script>
 
 <style lang="scss" scoped>
