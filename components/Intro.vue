@@ -3,7 +3,7 @@
     <p class="content">
       Działam na terenie całego kraju, oferując szeroką gamę usług związanych z detektywistyką jak też ochroną osobistą, obserwacją, obrotem gospodarczym, czy ustalaniem dochodu.
     </p>
-      <link-button text="Więcej o Detektywie" />
+      <link-button text="Więcej o Detektywie" :to="localePath('about')" />
     <span class="undertext lax" data-lax-preset="leftToRight">ustalenie dochodów obserwacja zdrada rozwód alimenty ustalenie dochodów</span>
   </section>
 </template>
