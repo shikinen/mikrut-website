@@ -7,30 +7,16 @@ export default {
   },
   navigation: [
     {
-      title: 'Usługi',
-      hash: 'observation',
+      title: 'o detektywie',
+      url: 'about',
+      submenu: false
+    },
+    {
+      title: 'usługi',
+      url: 'index#observation',
       submenu: true
-    },
-    {
-      title: 'Blog',
-      hash: 'blog',
-      submenu: false
-    },
-    {
-      title: 'O detektywie',
-      hash: 'bio',
-      submenu: false
-    },
-    {
-      title: 'Kontakt',
-      hash: 'contact',
-      submenu: false
     }
   ],
-  submenu: {
-    title: 'Usługi detektywa',
-    paragraph: 'Poznaj usługi świadczone<br>przez Agencję Detektywistyczną.'
-  },
   cta: {
     call: 'Zadzwoń',
     send: 'Wyślij',
@@ -44,7 +30,7 @@ export default {
   services: [
     {
       title: 'Obserwacja',
-      id: "observation",
+      id: 'observation',
       items: [
         {
           title: 'zdrada i rozwód',
@@ -66,7 +52,7 @@ export default {
     },
     {
       title: 'Kontrobserwacja',
-      id: "counterobservation",
+      id: 'counterobservation',
       items: [
         {
           title: 'zabezpieczenie spotkań biznesowych',
@@ -84,7 +70,7 @@ export default {
     },
     {
       title: 'Wykrywanie urządzeń',
-      id: "detection",
+      id: 'detection',
       list: true,
       items: [
         {
@@ -107,7 +93,7 @@ export default {
     },
     {
       title: 'Ustalenia detektywistyczne',
-      id: "investigation",
+      id: 'investigation',
       items: [
         {
           title: 'ustalenia dowodowe na potrzeby postępowania sądowego oraz na potrzeby własne Zlecającego',
@@ -129,14 +115,14 @@ export default {
     },
     {
       title: 'Inne',
-      id: "other",
+      id: 'other',
       list: true,
       text: 'Pomagam skutecznie rozwiązywać sprawy, których charakter i specyfika mogą wydawać się niestandardowe. W pierwszej kolejności krytycznie analizuję zagadnienie razem ze Zlecającym oraz specjalistami z innych dziedzin, aby móc przedstawić bezpieczne i realne rozwiązanie problemu. Działamy zawsze zgodnie z prawem.',
       items: [
         {
           title: 'Stalking',
           text: ''
-        },
+        }
       ]
     }
   ],

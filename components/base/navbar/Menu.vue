@@ -1,22 +1,14 @@
 <template>
   <transition name="fade" mode="out-in">
-    <div v-if="isMenuVisible" class="menu" @mouseleave="$store.commit('closeMenu')">
-      <!-- <div class="info">
-        <h4 class="title">
-          {{ $t('submenu.title') }}
-        </h4>
-        <p class="paragraph" v-html="$t('submenu.paragraph')"/>
-      </div> -->
-      <ul class="services-list">
-        <li v-for="service in $t('services')" :key="service.title" class="services-list__service">
-          <nuxt-link class="accent-link" :to="{ path: '/', hash: service.id }">
-            <h3 class="services-list__title">
-              {{ service.title }}
-            </h3>
-          </nuxt-link>
-        </li>
-      </ul>
-    </div>
+    <ul v-if="isMenuVisible" class="menu" @mouseleave="$store.commit('closeMenu')">
+      <li v-for="service in $t('services')" :key="service.title" class="item">
+        <nuxt-link class="accent-link" :to="{ path: '/', hash: service.id }">
+          <h3 class="item__title">
+            {{ service.title }}
+          </h3>
+        </nuxt-link>
+      </li>
+    </ul>
   </transition>
 </template>
 
@@ -30,47 +22,30 @@ export default {
 
 <style lang="scss" scoped>
   .menu {
-    height: 240px;
-    background-color: $secondary-color;
-    color: $primary-color;
-    padding: 56px 40px;
-    padding-right: 24px;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .info {
-    @include hide-down(xlg);
-    margin-right: 32px;
-    @include media-up(xxlg) {
-      margin-right: 48px;
-    }
-  }
-
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-
-  .services-list {
     display: flex;
     flex-wrap: wrap;
-    max-width: 808px;
-    margin-top: 64px;
-    &__service {
-      margin-bottom: 64px;
-      &:not(:last-child) {
+    max-width: 768px;
+    height: 240px;
+    background-color: $secondary-color;
+    padding: 56px 40px;
+  }
+
+  .item {
+    margin-bottom: 64px;
+    color: $primary-color;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+
+      @include media-up(xlg) {
+        margin-right: 24px;
+      }
+
+      @include media-up(xxlg) {
         margin-right: 40px;
-        @include media-up(xlg) {
-          margin-right: 24px;
-        }
-        @include media-up(xxlg) {
-          margin-right: 40px;
-        }
       }
     }
+
     &__title {
       @include subtitle-font;
     }

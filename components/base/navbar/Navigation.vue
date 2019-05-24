@@ -5,7 +5,7 @@
         <span
           v-if="item.submenu"
           :class="{ 'services--active': isMenuVisible }"
-          class="services"
+          class="services text-link"
           @mouseover="$store.commit('openMenu')"
         >
           {{ item.title }}
@@ -19,12 +19,6 @@
         </nuxt-link>
       </li>
     </ul>
-    <p class="navigation__phone">
-      <img class="navigation__phone--icon" src="/img/phone.svg">
-      <a class="text-link" :href="`tel:${$t('general.phone-href')}`">
-        {{ $t('cta.call') }} {{ $t('general.phone-full') }}
-      </a>
-    </p>
   </nav>
 </template>
 
@@ -38,13 +32,10 @@ export default {
 
 <style lang="scss" scoped>
   .navigation {
-    width: 100%;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
     display: flex;
     align-items: center;
+    font-size: 16px;
+    font-weight: 600;
 
     &__item {
       display: inline-block;
@@ -52,20 +43,6 @@ export default {
         margin-right: 48px;
         @include media-up(xlg) {
           margin-right: 80px;
-        }
-      }
-    }
-
-    &__phone {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-
-      &--icon {
-        margin-right: 16px;
-
-        .navigation__phone:hover & {
-          animation: phone 2s linear infinite;
         }
       }
     }

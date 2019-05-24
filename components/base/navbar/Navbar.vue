@@ -65,31 +65,29 @@ export default {
   $burger-index: 9998;
   $logo-index: 9997;
   $mobile-menu-index: 9996;
+
   .header {
     position: fixed;
     z-index: $header-index;
     top: 0;
     left: 0;
+    display: flex;
+    align-items: center;
     width: 100%;
+    height: 96px;
 
     padding: 0 $container-padding-sm;
     @include media-up(sm) {
       padding: 0 $container-padding;
     }
 
-    height: 96px;
-
     transition: $base-transition;
     &--scrolled {
       background-color: $primary-color;
     }
 
-    display: flex;
-    align-items: center;
-
     &__navigation {
-      @include hide-down(lg);
-      max-width: calc(100% - 144px - 48px);
+      @include hide-down(md);
       margin-left: auto;
     }
 
@@ -101,11 +99,15 @@ export default {
     &__menu {
       position: absolute;
       top: 100%;
-      left: 230px;
+      right: $container-padding-sm;
+
+      @include media-up(sm) {
+        right: $container-padding;
+      }
     }
 
     &__burger {
-      @include hide-up(lg);
+      @include hide-up(md);
       margin-left: auto;
       position: relative;
       z-index: $burger-index;
@@ -113,7 +115,7 @@ export default {
 
     &__mobile-menu {
       z-index: $mobile-menu-index;
-      @include hide-up(lg);
+      @include hide-up(md);
     }
   }
 </style>
