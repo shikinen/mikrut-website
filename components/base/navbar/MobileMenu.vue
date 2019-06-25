@@ -1,22 +1,23 @@
 <template>
-  <aside :class="{ 'visible': isMobileMenuVisible }" class="mobile-menu">
-    <div class="mobile-menu__content">
-      <ul class="mobile-menu__navigation">
-        <li
-          v-for="item in $t('navigation')"
-          :key="item.title"
-          @click="$store.commit('closeMobileMenu')"
+  <aside :class="{ visible }" class="mobile-menu" @click="closeMenu">
+    <ul class="navigation">
+      <li>
+        <nuxt-link :to="localePath('about')">
+          {{ $t('navigation.about.title') }}
+        </nuxt-link>
+      </li>
+      <li
+        v-for="service in $t('services')"
+        :key="service.title"
+        @click="$store.commit('closeMobileMenu')"
+      >
+        <nuxt-link
+          :to="'/' + service.id"
         >
-          <nuxt-link
-            class="text-link"
-            :to="{ path: '/', hash: item.hash }"
-          >
-            {{ item.title }}
-          </nuxt-link>
-        </li>
-      </ul>
-      <phone-button phone-big />
-    </div>
+          {{ service.title.toLowerCase() }}
+        </nuxt-link>
+      </li>
+    </ul>
   </aside>
 </template>
 
@@ -24,36 +25,40 @@
 import { mapState } from 'vuex'
 
 export default {
-  computed: mapState(['isMobileMenuVisible'])
+  computed: mapState({ visible: state => state.isMobileMenuVisible }),
+  watch: {
+    visible (is) {
+      document.querySelector('body').style.position = is ? 'fixed' : 'static'
+    }
+  },
+  methods: {
+    closeMenu () {
+      this.$store.commit('closeMobileMenu')
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
   .mobile-menu {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    background-color: $primary-color;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
     transition: all .6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transform: translateY(-100vh);
+  }
 
-    &__content {
-      margin: auto;
-      @include media-down(sm) {
-        margin: 144px $container-padding-sm 0;
-      }
-    }
+  .navigation {
+    margin: auto;
+    @include paragraph-font;
+    font-weight: 500;
 
-    &__navigation {
-      @include subtitle-font-medium;
-      margin-bottom: 48px;
-
-      li:not(:last-child) {
-        margin-bottom: 48px;
-      }
+    li:not(:last-child) {
+      margin-bottom: 32px;
     }
   }
 

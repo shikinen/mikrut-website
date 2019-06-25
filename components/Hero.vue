@@ -2,17 +2,22 @@
   <section class="hero">
     <div
       class="hero__content lax"
-      data-lax-scale="0 1, vh 0.2"
-      data-lax-translate-y="0 0, vh 1200"
-      data-lax-opacity="0 1, (vh*0.5) 0"
     >
-      <h1
-        class="hero__heading"
-        v-html="$t('hero.heading')"
-      />
-      <h2 class="hero__subheading subtitle" v-html="$t('hero.subheading')"/>
-      <phone-button class="cta" phone-big/>
-      <social class="hero__social" vertical all/>
+      <div class="heading__wrapper">
+        <h1
+          class="heading"
+          v-html="$t('hero.heading')"
+        />
+        <!--        <div class="hero-logo">-->
+        <!--          <logo/>-->
+        <!--        </div>-->
+      </div>
+      <h2 class="subheading">
+        bezpiecznie, dyskretnie, legalnie
+      </h2>
+      <h2 class="phone">
+        {{ $t('phone.full') }}
+      </h2>
     </div>
     <video
       class="hero__video"
@@ -38,7 +43,8 @@ $content-index: 3;
 }
 
 .hero {
-  padding-top: 48px;
+  padding-top: 0px;
+
   &__video {
     position: fixed;
     bottom: 0;
@@ -58,10 +64,12 @@ $content-index: 3;
     width: 100vw;
     height: calc(100vh + 48px);
     z-index: $overlay-index;
-    background-image: linear-gradient(rgba($primary-color, .3), rgba($primary-color, 1));
+    background-image: linear-gradient(rgba($black, .1) 80%, rgba($black, 1));
   }
 
   &__content {
+    max-width: $container-width;
+    margin: 0 auto;
     position: relative;
     z-index: $content-index;
     height: 100vh;
@@ -70,115 +78,145 @@ $content-index: 3;
     grid-template-columns: $container-padding-sm [full-start inner-start] 1fr [inner-end full-end] $container-padding-sm;
 
     @include media-up(sm) {
-      grid-template-columns: $container-padding [full-start inner-start] 1fr [inner-end full-end] $container-padding;
+      grid-template-columns: $container-padding [full-start inner-start] repeat(2, minmax(min-content, 612px)) [inner-end full-end] $container-padding;
     }
 
-    @include media-up(xxlg) {
-      grid-template-columns: $container-padding [full-start] 1fr [inner-start] 968px [inner-end] 1fr [full-end] $container-padding;
+    @include media-up(xlg) {
+      grid-template-columns: $container-padding 1fr [full-start inner-start] repeat(2, minmax(min-content, 612px)) [inner-end full-end] 1fr $container-padding;
     }
 
     grid-template-rows: repeat(4, max-content);
 
-    grid-row-gap: 24px;
-
-    @include media-up(sm) {
-      grid-row-gap: 48px;
-    }
-
-    @include media-up(md) {
-      grid-row-gap: 16px;
-    }
+    grid-row-gap: 3px;
 
     align-content: center;
-    // background-image: url('/img/hero.jpg');
-    // background-size: contain;
-    // background-position: center;
-    // background-repeat: no-repeat;
+  }
+}
+
+.heading {
+  line-height: 1.2;
+  font-weight: 700;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  @include media-up(sm) {
+    font-size: 56px;
   }
 
-  &__heading {
+  @include media-up(xlg) {
+    font-size: 56px;
+  }
+
+  &__wrapper {
+    position: relative;
     grid-column: inner;
     grid-row: 1 / 2;
     align-self: center;
+    justify-self: start;
+    display: flex;
+  }
+}
 
-    font-size: 60px;
+.phone {
+  grid-column: 4/ 5;
+  grid-row: 1 / 2;
+  align-self: center;
+  justify-self: end;
+  width: 300px;
+  float: right;
+  font-weight: 700;
+  font-size: 32px;
+  color: $gray;
+}
+
+.hero-logo {
+  position: absolute;
+  bottom: 0px;
+  right: -32px;
+  display: flex;
+  align-items: center;
+
+  @include media-up(sm) {
+    bottom: 24px;
+    right: -54px;
+  }
+
+  @include media-up(xlg) {
+    top: -44px;
+    right: -40px;
+  }
+
+  &__line {
+    @include line(64px, $gray);
+    display: inline-block;
+    margin-right: 16px;
 
     @include media-up(sm) {
-      font-size: 80px;
+      @include line(80px, $gray);
     }
 
-    @include media-up(md) {
-      font-size: 96px;
-    }
-
-    line-height: 1.2;
-    font-weight: 700;
-    position: relative;
-
-    @include hero-animation(moveInLeft);
-  }
-
-  &__subheading {
-    font-style: italic;
-    font-weight: 500;
-    @include hide-down(sm);
-    grid-column: inner;
-    grid-row: 2 / 3;
-    @include media-up(md) {
-      text-align: left;
-      margin-bottom: 0;
-    }
-    align-self: start;
-
-    @include hero-animation(moveInLeft);
-
-    position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -24%;
-      left: 8%;
-      transform: translateY(80%);
-      @include media-up(md) {
-      }
-
-      display: block;
-      width: 194px;
-      height: 96px;
-      background-image: url('/img/signature.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-  }
-
-  &__social {
-    @include hide-down(md);
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    justify-self: end;
-    align-self: center;
-
-    @include media-up(xxlg) {
-      grid-column: 4 / 5;
+    @include media-up(xlg) {
+      @include line(140px, $gray);
     }
   }
 }
 
-.cta {
+.subheading {
   grid-column: inner;
   grid-row: 3 / 4;
+  justify-self: start;
+  font-size: 15.5px;
+  line-height: 1.4;
+  font-style: italic;
+  font-weight: 500;
+
   @include media-up(sm) {
-    justify-self: end;
+    font-size: 15px;
   }
 
-  @include hero-animation(moveInRight);
+  @include media-up(lg) {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 14.5px;
+  }
 
-  &__title {
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
+  @include media-up(xlg) {
+    grid-column: 3 / 4;
+  }
+
+  position: relative;
+  &::after {
+    display: none;
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -80%;
+    @include media-up(lg) {
+      bottom: -80px;
+    }
+    width: 150px;
+    height: 60px;
+    background-image: url('/img/signature.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
+
+  .phone {
+    margin-top: 24px;
+    font-size: 18px;
+    color: $accent;
+    text-shadow: 2px 2px 12px $accent;
+    justify-self: start;
+    grid-row: 4 / 5;
+    grid-column: 2/3;
+
+    @include media-up(xlg) {
+      grid-column: 3/4;
+    }
+  }
 </style>

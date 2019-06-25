@@ -1,51 +1,30 @@
 <template>
-  <div class="info">
-    <template v-if="all || detective">
-      <span>
-        detektyw
+  <div class="info" :class="{ '--footer' : footer }">
+    <div class="element">
+      <span class="element__name">
+        MSWiA
       </span>
-      <hr class="info__line">
-      <h4 class="info__text">
-        Kamil Mikrut
-      </h4>
-    </template>
-    <template v-if="all || concession">
-      <span>
-        koncesja MSWiA
-      </span>
-      <hr class="info__line">
-      <h4>
+      <div class="line"/>
+      <h4 class="element__title">
         RD-19/2016
       </h4>
-    </template>
-    <template v-if="all || license">
-      <span>
+    </div>
+    <div class="element">
+      <span class="element__name">
         nr licencji
       </span>
-      <hr class="info__line">
-      <h4>
+      <div class="line"/>
+      <h4 class="element__title">
         0001899
       </h4>
-    </template>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    all: {
-      type: Boolean,
-      default: false
-    },
-    detective: {
-      type: Boolean,
-      default: false
-    },
-    concession: {
-      type: Boolean,
-      default: false
-    },
-    license: {
+    footer: {
       type: Boolean,
       default: false
     }
@@ -55,18 +34,60 @@ export default {
 
 <style lang="scss" scoped>
   .info {
-    display: grid;
-    grid-template-rows: repeat(3, min-content);
-    grid-template-columns: max-content 32px max-content;
-    grid-gap: 16px;
-
-    @include media-up(sm) {
-      grid-template-columns: max-content 48px max-content;
-      grid-gap: 32px;
+    @include media-up(md) {
+      display: grid;
+      grid-gap: 48px;
+      grid-template-columns: repeat(2, max-content);
     }
 
-    &__line {
-      align-self: center;
+    @include media-up(lg) {
+      grid-gap: 64px;
+    }
+  }
+
+  .element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+
+    @include media-down(md) {
+      &__name {
+        display: inline-block;
+        width: 98px;
+      }
+
+      &__title {
+        width: 72px;
+      }
+    }
+  }
+
+
+  .info-title {}
+
+  .line {
+    width: 48px;
+    height: 1px;
+    background: $gray;
+    margin: 0 16px;
+
+    @include media-up(lg) {
+      margin: 0 24px;
+    }
+  }
+
+  .--footer {
+    @include small-font;
+
+    @include media-up(lg) {
+      color: $gray;
+    }
+
+    @include media-down(md) {
+      .element:not(:last-child) {
+        margin-bottom: 32px;
+      }
     }
   }
 </style>

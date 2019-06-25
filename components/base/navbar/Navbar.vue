@@ -1,6 +1,6 @@
 <template>
   <header :class="{ 'header--scrolled': scrollPosition > 20 }" class="header" @mouseleave="$store.commit('closeMenu')">
-    <nuxt-link :to="localePath('index')">
+    <nuxt-link :to="localePath('index')" @click.native="closeMenu">
       <logo class="header__logo"/>
     </nuxt-link>
     <navigation class="header__navigation"/>
@@ -56,6 +56,11 @@ export default {
     this.$once('hook:beforeDestroy', () => {
       window.removeEventListener('resize', resizeHandler)
     })
+  },
+  methods: {
+    closeMenu () {
+      this.$store.commit('closeMobileMenu')
+    }
   }
 }
 </script>
@@ -65,29 +70,37 @@ export default {
   $burger-index: 9998;
   $logo-index: 9997;
   $mobile-menu-index: 9996;
+  $navigation-index: 9995;
 
   .header {
     position: fixed;
-    z-index: $header-index;
     top: 0;
     left: 0;
+    z-index: $header-index;
     display: flex;
     align-items: center;
     width: 100%;
     height: 96px;
-
-    padding: 0 $container-padding-sm;
-    @include media-up(sm) {
-      padding: 0 $container-padding;
-    }
-
+    @include container-padding;
     transition: $base-transition;
-    &--scrolled {
-      background-color: $primary-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -8px;
+      width: 120%;
+      height: 172px;
+      margin: 0 -8px;
+      filter: blur(1px);
+      box-shadow: inset 0 152px 70px -70px #000;
+      pointer-events: none;
     }
 
     &__navigation {
       @include hide-down(md);
+      position: relative;
+      z-index: $navigation-index;
       margin-left: auto;
     }
 

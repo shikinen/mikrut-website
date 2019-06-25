@@ -8,14 +8,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Detektyw Kamil Mikrut – Agencja Detektywistyczna Warszawa',
     htmlAttrs: {
-      lang: 'pl-PL',
+      lang: 'pl-PL'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'Detektyw Kamil Mikrut – Agencja detektywistyczna świadcząca usługi detektywistyczne – zdrada, śledztwo, ochrona, dzieci' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
@@ -23,7 +23,7 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
       { rel: 'icon', type: 'image/png', sizes: '128x128', href: '/favicon-128.png' },
       { rel: 'icon', type: 'image/png', sizes: '196x196', href: '/favicon-196x196.png' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
@@ -31,7 +31,7 @@ export default {
   ** Router configuration
   */
   router: {
-    scrollBehavior(to) {
+    scrollBehavior (to) {
       if (to.hash && document.querySelector(to.hash)) {
         return window.scrollTo({ top: document.querySelector(to.hash).offsetTop + window.innerHeight, behavior: 'smooth' })
       }
@@ -40,7 +40,7 @@ export default {
           if (to.hash && document.querySelector(to.hash)) {
             resolve({ x: 0, y: document.querySelector(to.hash).offsetTop + window.innerHeight })
           }
-          return window.scrollTo({ top: 0 });
+          return window.scrollTo({ top: 0 })
         })
       })
     }
@@ -65,8 +65,8 @@ export default {
     '~plugins/global-components',
     '~plugins/vue-lazyload',
     '~plugins/directives',
-    { src:'~/plugins/lax.js', ssr: false },
-    { src: "~/plugins/aos", ssr: false },
+    { src: '~/plugins/lax.js', ssr: false },
+    { src: '~/plugins/aos', ssr: false },
     { src: '~plugins/vue-mq', ssr: false }
   ],
 
@@ -92,7 +92,7 @@ export default {
         fallbackLocale: 'pl',
         messages
       }
-    }],
+    }]
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
 
   ],
@@ -103,7 +103,8 @@ export default {
   styleResources: {
     scss: [
       '@/assets/scss/_variables.scss',
-      '@/assets/scss/_mixins.scss'
+      '@/assets/scss/_mixins.scss',
+      '@/assets/scss/_typography.scss'
     ]
   },
   /*
@@ -127,7 +128,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({

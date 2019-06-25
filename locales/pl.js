@@ -1,36 +1,39 @@
 export default {
-  general: {
-    'phone-full': '+48 519 734 926',
-    'phone-short': '519 734 926',
-    'phone-prefix': '+48',
-    'phone-href': '0048519734926'
+  phone: {
+    'full': '+48 519 734 926',
+    'short': '519 734 926',
+    'prefix': '+48',
+    'href': '0048519734926'
   },
-  navigation: [
-    {
+  navigation: {
+    about: {
       title: 'o detektywie',
-      url: 'about',
-      submenu: false
+      url: 'about'
     },
-    {
+    index: {
+      title: 'strona główna',
+      url: 'index'
+    },
+    services: {
       title: 'usługi',
-      url: 'index#observation',
       submenu: true
     }
-  ],
+  },
   cta: {
-    call: 'Zadzwoń',
-    send: 'Wyślij',
-    read: 'Czytaj',
-    'read-more': 'Czytaj więcej'
+    call: 'zadzwoń',
+    send: 'wyślij',
+    read: 'czytaj',
+    'read-more': 'czytaj więcej',
+    back: 'wróć'
   },
   hero: {
     heading: 'Detektyw<br>Mikrut',
-    subheading: 'Nie kreujemy się na najlepszych!<br>Po prostu robimy swoje –<br>dyskretnie i skutecznie.'
+    subheading: 'dyskretnie, legalnie, skutecznie.'
   },
   services: [
     {
       title: 'Obserwacja',
-      id: 'observation',
+      id: 'obserwacja',
       items: [
         {
           title: 'zdrada i rozwód',
@@ -52,7 +55,7 @@ export default {
     },
     {
       title: 'Kontrobserwacja',
-      id: 'counterobservation',
+      id: 'kontrobserwacja',
       items: [
         {
           title: 'zabezpieczenie spotkań biznesowych',
@@ -70,7 +73,7 @@ export default {
     },
     {
       title: 'Wykrywanie urządzeń',
-      id: 'detection',
+      id: 'wykrywanie-urzadzen',
       list: true,
       items: [
         {
@@ -93,7 +96,7 @@ export default {
     },
     {
       title: 'Ustalenia detektywistyczne',
-      id: 'investigation',
+      id: 'ustalenia-detektywistyczne',
       items: [
         {
           title: 'ustalenia dowodowe na potrzeby postępowania sądowego oraz na potrzeby własne Zlecającego',
@@ -115,7 +118,7 @@ export default {
     },
     {
       title: 'Inne',
-      id: 'other',
+      id: 'inne',
       list: true,
       text: 'Pomagam skutecznie rozwiązywać sprawy, których charakter i specyfika mogą wydawać się niestandardowe. W pierwszej kolejności krytycznie analizuję zagadnienie razem ze Zlecającym oraz specjalistami z innych dziedzin, aby móc przedstawić bezpieczne i realne rozwiązanie problemu. Działamy zawsze zgodnie z prawem.',
       items: [
@@ -124,32 +127,26 @@ export default {
           text: ''
         }
       ]
+    },
+    {
+      title: 'Obszar operacyjny',
+      id: 'obszar-operacyjny',
+      text: 'lorem ipsum'
     }
   ],
   bio: {
-    short: 'Detektyw, Certyfikowany Compliance Officer, zajmuje się wykrywaniem oszustw w organizacjach oraz zapobieganiem przestępczości gospodarczej i skarbowej. W Agencji odpowiedzialny również za planowanie i realizację działań detektywistycznych.',
-    title: 'Detektyw Kamil Mikrut',
+    title: 'Detektyw<br>Kamil Mikrut',
     long: [
-      'Nazywam się Kamil Mikrut i jestem prywatnym detektywem (licencja nr 0001899). Chciałbym Państwu w kilku zdaniach przybliżyć wartości, którymi kieruję się w swojej trudnej i wymagającej pracy detektywa. Zapraszam do krótkiej lektury.',
-      'Kilka intensywnych lat pracy w zawodzie detektywa zaowocowało nawiązaniem przeze mnie wielu wartościowych relacji: z innymi detektywami, psychologami, dziennikarzami, specjalistami ds. bezpieczeństwa, byłymi funkcjonariuszami służb, prawnikami, a przede wszystkim - z zadowolonymi Klientami. To bezcenna reklama. Polecający mnie i moje usługi wiedzą, że zawsze daję z siebie 100 procent. Wiedzą też, że warto mi zaufać - ręczą za mnie swoim dobrym imieniem i reputacją, co jest dla mnie dużym wyróżnieniem i dodatkowym czynnikiem motywującym.',
-      'Zawód detektywa jest bardzo specyficznym i absorbującym zajęciem. Pracujemy dla podmiotów gospodarczych i osób prywatnych, które potrzebują pomocy “tu i teraz”. To oznacza, że oczekuje się od nas natychmiastowego wręcz zaangażowania oraz sprawnej komunikacji w toku trwania zlecenia detektywistycznego. Z doświadczenia wiem, że tylko osobiste (bezpośrednie) nadzorowanie spraw pozwala zwiększyć szansę na ich pozytywne, tj. korzystne dla Klienta zakończenie. To jednak wymaga czasu. Dlatego też przyjmuję jedynie wybrane sprawy - pracuję przede wszystkim dla Klientów z polecenia, którzy akceptują moje legalne metody pracy, zgadzają się z przygotowanym przeze mnie planem działania oraz dysponują odpowiednim budżetem. W zamian otrzymują mnie na wyłączność - gotowego do bezpiecznego, dyskretnego i skutecznego działania .',
-      'Swoje usługi oferuję zarówno podmiotom gospodarczym, jak i osobom prywatnym. Podpisanie umowy poprzedza wywiad przeprowadzony z potencjalnym Klientem oraz dokładna analiza zagadnienia, z którym przychodzi mi się zmierzyć. Współpracuję z wieloma specjalistami z różnych dziedzin: prawnikami, kryminologami, psychologami i innymi osobami gotowymi wesprzeć mnie i moich Klientów merytoryczną wiedzą na konkretny temat.',
-      'Pracuję tam, gdzie mogę Ci pomóc . Głównym obszarem moich działań jest Warszawa, województwo mazowieckie, ponieważ tu mieszkam i prowadzę działalność gospodarczą wpisaną do rejestru działalności regulowanej Ministerstwa Spraw Wewnętrznych i Administracji (RD-19/2016). Często realizuję sprawy także dla Klientów z Trójmiasta, Katowic i Krakowa.'
+      'Nazywam się Kamil Mikrut i jestem prywatnym detektywem (licencja nr 0001899). Chciałbym Państwu w kilku zdaniach przybliżyć wartości, którymi kieruję się w swojej trudnej i wymagającej pracy. Zapraszam do krótkiej lektury.',
+      'Kilka intensywnych lat pracy w zawodzie detektywa zaowocowało nawiązaniem przeze mnie wielu wartościowych relacji, m.in. z detektywami, psychologami, dziennikarzami śledczymi, specjalistami ds. bezpieczeństwa, byłymi funkcjonariuszami służb, prawnikami, a przede wszystkim - z zadowolonymi Klientami. To bezcenna reklama. Polecający mnie i moje usługi wiedzą, że zawsze daję z siebie 100 procent. Wiedzą też, że warto mi zaufać - ręczą za mnie swoim dobrym imieniem i reputacją, co jest dla mnie dużym wyróżnieniem.',
+      'Zawód detektywa, to specyficzne i bardzo absorbujące zajęcie. Pracujemy dla podmiotów gospodarczych oraz osób prywatnych, które potrzebują pomocy “tu i teraz”. To oznacza, że oczekuje się od nas natychmiastowego wręcz zaangażowania oraz sprawnej komunikacji w toku trwania zlecenia detektywistycznego. Z doświadczenia wiem, że tylko osobiste (bezpośrednie) nadzorowanie spraw pozwala zwiększyć szansę na ich pozytywne, tj. korzystne dla Klienta zakończenie. To jednak wymaga czasu. Dlatego też przyjmuję jedynie wybrane sprawy - pracuję przede wszystkim dla Klientów z polecenia, którzy akceptują moje legalne metody pracy, zgadzają się z przygotowanym przeze mnie planem działania oraz dysponują odpowiednim budżetem. W zamian pozostaję do ich wyłącznej dyspozycji - gotowy do bezpiecznego, dyskretnego i legalnego działania.',
+      'Swoje usługi oferuję zarówno podmiotom gospodarczym, jak i osobom prywatnym. Podpisanie umowy poprzedza wywiad przeprowadzony z potencjalnym Klientem oraz dokładna analiza zagadnienia, z którym przychodzi mi się zmierzyć. Współpracuję z wieloma specjalistami z różnych dziedzin: prawnikami, kryminologami, psychologami i innymi osobami gotowymi wesprzeć mnie i moich Klientów merytoryczną wiedzą na dany temat.',
+      'Pracuję tam, gdzie mogę Ci pomóc. Głównym obszarem moich działań jest Warszawa (i województwo mazowieckie), ponieważ tu mieszkam i prowadzę działalność gospodarczą wpisaną do rejestru działalności regulowanej Ministerstwa Spraw Wewnętrznych i Administracji (RD-19/2016). Często realizuję sprawy także dla Klientów z Trójmiasta, Katowic i Krakowa, gdzie współpracuję z innymi detektywami i prawnikami.',
+      'Jeżeli uważasz, że mogę Ci pomóc - skontaktuj się ze mną!'
     ]
   },
   map: {
     title: 'Obszar operacyjny',
     description: 'Usługi detektywistyczne oferuję w Warszawie, Łodzi, Krakowie, Katowicach i Trójmieście. Działania operacyjne prowadzę na terenie całego kraju.'
-  },
-  blog: {
-    title: 'Blog Detektywa'
-  },
-  contact: {
-    title: 'Kontakt',
-    subtitle: 'Skontaktuj się z detektywem<br>całkowicie anonimowo i bezpiecznie.',
-    'phone-placeholder': 'Numer telefonu',
-    'name-placeholder': 'Imię i nazwisko',
-    'message-placeholder': 'Wiadomość',
-    optional: '(opcjonalnie)'
   }
 }

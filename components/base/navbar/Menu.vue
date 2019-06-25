@@ -2,9 +2,9 @@
   <transition name="fade" mode="out-in">
     <ul v-if="isMenuVisible" class="menu" @mouseleave="$store.commit('closeMenu')">
       <li v-for="service in $t('services')" :key="service.title" class="item">
-        <nuxt-link class="accent-link" :to="{ path: '/', hash: service.id }">
-          <h3 class="item__title">
-            {{ service.title }}
+        <nuxt-link class="accent-link" :to="service.id">
+          <h3 class="item-title">
+            {{ service.title.toLowerCase() }}
           </h3>
         </nuxt-link>
       </li>
@@ -26,29 +26,26 @@ export default {
     flex-wrap: wrap;
     max-width: 768px;
     height: 240px;
-    background-color: $secondary-color;
     padding: 56px 40px;
+    background-color: $white;
   }
 
   .item {
     margin-bottom: 64px;
-    color: $primary-color;
+    color: $black;
 
     &:not(:last-child) {
-      margin-right: 40px;
+      margin-right: 24px;
 
-      @include media-up(xlg) {
-        margin-right: 24px;
-      }
-
-      @include media-up(xxlg) {
+      @include media-up(lg) {
         margin-right: 40px;
       }
     }
+  }
 
-    &__title {
-      @include subtitle-font;
-    }
+  .item-title {
+    @include subtitle-font;
+    font-weight: bold;
   }
 
   .fade-enter-active, .fade-leave-active {

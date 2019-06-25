@@ -1,44 +1,26 @@
 <template>
-  <div class="button__wrapper">
+  <div class="wrapper" :class="{ left }">
     <nuxt-link
-      :class="{ 'button--small': small, 'button--inline': inline }"
       class="button"
       :to="to"
     >
       {{ text }}
     </nuxt-link>
     <svg
-      width="24px"
-      height="9px"
-      viewBox="0 0 24 9"
-      version="1.1"
+      class="arrow"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="41"
+      height="15"
+      viewBox="0 0 41 15"
     >
       <g
-        stroke="none"
-        stroke-width="1"
+        class="arrow__shape"
         fill="none"
         fill-rule="evenodd"
         stroke-linejoin="round"
+        stroke-width="1.5"
       >
-        <g
-          :class="{ 'button__arrow--black': black }"
-          class="button__arrow"
-          transform="translate(-647.000000, -7884.000000)"
-          stroke-width="1.5"
-        >
-          <g transform="translate(152.000000, 7431.000000)">
-            <g transform="translate(96.000000, 96.000000)">
-              <g transform="translate(270.000000, 304.000000)">
-                <g transform="translate(129.000000, 53.000000)">
-                  <path id="Path" d="M23.25,4.497 L0.75,4.497"/>
-                  <polyline id="Path" points="19.5 8.247 23.25 4.497 19.5 0.747"/>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
+        <path d="M1.87 7.875H41M7.957.875L1.435 7.438 7.957 14"/>
       </g>
     </svg>
   </div>
@@ -55,15 +37,7 @@ export default {
       type: String,
       default: ''
     },
-    small: {
-      type: Boolean,
-      default: false
-    },
-    black: {
-      type: Boolean,
-      default: false
-    },
-    inline: {
+    left: {
       type: Boolean,
       default: false
     }
@@ -73,10 +47,32 @@ export default {
 
 <style lang="scss" scoped>
   .button {
-    @include button;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    @include small-font;
+    padding-left: 56px;
   }
 
-.bigger-font {
-  font-size: 24px;
-}
+  .wrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .arrow {
+    margin-left: 16px;
+    margin-right: -32px;
+    transform: rotate(180deg);
+
+    .left & {
+      order: -1;
+      margin-left: 0;
+      transform: rotate(0deg);
+    }
+
+    &__shape {
+      stroke: $gray;
+    }
+  }
 </style>

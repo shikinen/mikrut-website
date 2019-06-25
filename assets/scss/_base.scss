@@ -8,7 +8,7 @@
 
 html, body {
   height: 100vh;
-  background-color: $primary-color;
+  background-color: $black;
 }
 
 body {
@@ -20,5 +20,19 @@ body {
 }
 
 ::selection{
-  background: $accent-color;
+  background: $accent;
+}
+
+.container {
+  max-width: $container-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: $container-padding-sm;
+  @include media-up(sm) {
+    padding: $container-padding;
+  }
+}
+
+.nuxt-link-exact-active {
+  color: $accent !important;
 }

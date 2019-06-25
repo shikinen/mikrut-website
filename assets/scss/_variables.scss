@@ -1,31 +1,39 @@
 // COLORS
-$primary-color: #000;
-$secondary-color: #fff;
-$accent-color: #FF163D;
-$accent-darker-color: darken($accent-color, 7%);
+$black: #000;
+$white: #fff;
+$accent: #ff163d;
 $gray: #9b9b9b;
 
 // SHADOWS
-$accent-shadow: 0 10px 20px 0 $accent-color;
-$accent-shadow-small: 0 5px 18px 0 $accent-color;
-$accent-shadow-blurred: 0 10px 20px 0 rgba($accent-color, .4);
-$primary-shadow: 0 10px 20px 0 lighten($primary-color, 50%);
-$primary-shadow-small: 0 5px 18px 0 lighten($primary-color, 50%);
+$accent-shadow: 0 10px 20px 0 $accent;
+$accent-shadow-small: 0 5px 18px 0 $accent;
+$accent-shadow-blurred: 0 10px 20px 0 rgba($accent, .4);
+$black-shadow: 0 10px 20px 0 lighten($black, 50%);
+$black-shadow-small: 0 5px 18px 0 lighten($black, 50%);
 
 // TRANSITIONS
 $base-transition: all .2s ease-in-out;
 
 // LAYOUT
+$container-width: 1224px;
 $container-padding: 40px;
 $container-padding-sm: 24px;
 $header-offset: 144px;
 
 // TYPOGRAPHY
+$title-font-size-sm: 40px;
+$title-font-size-md: 48px;
+$title-font-size-xlg: 56px;
+$title-font-weight: 700;
+$title-line-height: 1.2;
+
+$subtitle-font-size: 24px;
+$subtitle-font-weight: 500;
+$subtitle-line-height: 1.35;
+
 $paragraph-font-size: 16px;
+$paragraph-font-size-sm: 18px;
 $paragraph-font-weight: 400;
 $paragraph-line-height: 1.619;
 
-$subtitle-font-size: 24px;
-$subtitle-font-weight: 700;
-$subtitle-line-height: 1.35;
-
+$small-font-size: 13px;

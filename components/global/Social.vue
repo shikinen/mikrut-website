@@ -11,8 +11,8 @@
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           viewBox="0 0 169 169"
           class="socials__svg"
         >
@@ -48,8 +48,8 @@
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 58 58"
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           class="socials__svg"
         >
           <title>Detektyw Mikrut Facebook</title>
@@ -69,8 +69,8 @@
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="16"
-          height="16"
+          width="12"
+          height="12"
           viewBox="0 0 430.117 430.118"
           class="socials__svg"
         >
@@ -141,7 +141,15 @@ export default {
     }
 
     &__svg {
-      fill: $secondary-color;
+      fill: $white;
+      width: 18px;
+      height: 18px;
+
+      @include media-up(lg) {
+        fill: $gray;
+        height: 12px;
+        width: 12px;
+      }
     }
 
     &--boxed {
@@ -157,7 +165,7 @@ export default {
         background-color: currentColor;
       }
       .socials__svg {
-        fill: $primary-color;
+        fill: $black;
       }
     }
   }
@@ -180,7 +188,7 @@ export default {
       .socials__icon {
         &:not(:last-child) {
           margin-right: 0;
-          margin-bottom: 16;
+          margin-bottom: 16px;
         }
       }
     }

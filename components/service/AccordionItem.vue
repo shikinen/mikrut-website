@@ -1,10 +1,14 @@
 <template>
-  <li :id="item.id" class="accordion-item" :class="{ 'active': item.active, right, list }">
+  <li
+    :id="item.id"
+    class="accordion-item"
+    :class="{ 'active': item.active, right, list }"
+    @click="toggle"
+  >
     <header class="accordion-item__header">
-      <h4 class="accordion-item__title" @click="toggle">
+      <h4 class="accordion-item__title">
         {{ item.title }}
       </h4>
-      <span class="accordion-item__arrow"/>
     </header>
     <transition
       name="slide"
@@ -47,7 +51,7 @@ export default {
       if (this.multiple) this.item.active = !this.item.active
       else {
         this.$parent.$children.forEach((item, index) => {
-          if (item.$el.id === event.currentTarget.parentElement.parentElement.id) item.item.active = !item.item.active
+          if (item.$el.id === event.currentTarget.id) item.item.active = !item.item.active
           else item.item.active = false
         })
       }
@@ -64,13 +68,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .accordion-item {
   cursor: pointer;
 
   &.list {
     cursor: default;
+
+    &:hover::after {
+      background: rgba($white, .2);
+    }
   }
 
   position: relative;
@@ -82,19 +88,19 @@ export default {
     display: block;
     width: 80px;
     height: 1px;
-    background: rgba($secondary-color, .2);
+    background: rgba($white, .2);
     transition: $base-transition;
   }
 
   &.right::after {
-    @include media-up(md) {
+    @include media-up(lg) {
       left: unset;
       right: 0;
     }
   }
 
   &:hover::after {
-    background: $accent-color;
+    background: $accent;
   }
 
   &__header {
@@ -103,28 +109,31 @@ export default {
 
   &__title {
     padding: 16px 0;
+
     @include media-up(sm) {
-      padding-left: 24px 0 4px;
+      padding-left: 32px;
     }
-    @include subtitle-font-medium;
+
+    @include subtitle-font;
 
     position: relative;
     &::before {
       @include hide-down(sm);
       content: '';
       position: absolute;
-      z-index: -1;
       bottom: 0;
       top: 0;
       margin: auto;
       left: -24px;
       width: 16px;
+
       @include media-up(sm) {
         left: -16px;
         width: 24px;
       }
+
       height: 2px;
-      background: $accent-color;
+      background: $accent;
       box-shadow: $accent-shadow-blurred;
       opacity: 0;
       transform: translateX(-100px);
@@ -132,15 +141,15 @@ export default {
     }
 
     .right & {
-      @include media-up(md) {
+      @include media-up(lg) {
         text-align: right;
-        padding-right: 24px;
+        padding-right: 32px;
         padding-left: 0;
       }
     }
 
     .right &::before {
-      @include media-up(md) {
+      @include media-up(lg) {
         left: unset;
         right: -16px;
         transform: translateX(100px);
@@ -157,45 +166,28 @@ export default {
     }
   }
 
-  &__arrow {
-    @include hide-down(sm);
-    $size: 8px;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    bottom: 0;
-    width: $size;
-    height: $size;
-    border-right: 1px solid rgba($secondary-color, .5);
-    border-bottom: 1px solid rgba($secondary-color, .5);
-    transform: translateY(-$size / 2) rotate(45deg);
-    transition: $base-transition;
-
-    .right & {
-      @include media-up(md) {
-        right: unset;
-        left: 0;
-      }
-    }
-
-    .active & {
-      transform: translateY($size / 4) rotate(225deg);
-    }
-
-    .list & {
-      display: none;
-    }
-  }
-
   &__text-wrapper {
+    width: 100%;
     overflow: hidden;
+
   }
 
   &__text {
     overflow: hidden;
-    padding: 0 24px 24px;
+    padding: 0 0 24px;
+    max-width: 620px;
     @include paragraph-font;
+
+    @include media-up(sm) {
+      padding: 0 32px 24px;
+    }
+
+    .right & {
+      @include media-up(lg) {
+        float: right;
+        text-align: right;
+      }
+    }
   }
 }
 

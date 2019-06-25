@@ -3,49 +3,103 @@ body {
   font-weight: $paragraph-font-weight;
   font-size: $paragraph-font-size;
   line-height: 1;
-  color: $secondary-color;
+  color: $white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   @include reset-link;
-  position: relative;
 }
 
-.text-link {
-  @include text-link;
+@mixin accent-link {
+  &:hover {
+    color: $accent;
+  }
 }
 
 .accent-link {
   @include accent-link;
 }
 
-
-h1 {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.2;
-  @include media-up(sm) {
-    font-size: 64px;
+@mixin text-link {
+  cursor: pointer;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -8px;
+    left: 0;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: $base-transition;
+    background-color: currentColor;
   }
-  @include media-up(sm) {
-    font-size: 80px;
+  &:hover {
+    &::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
   }
 }
 
-.paragraph {
-  @include paragraph-font;
+.text-link {
+  @include text-link;
+}
+
+@mixin title-font {
+  font-size: $title-font-size-sm;
+  font-weight: $title-font-weight;
+  line-height: $title-line-height;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+  @include media-up(sm) {
+    font-size: $title-font-size-md;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
+
+  @include media-up(xlg) {
+    font-size: $title-font-size-xlg;
+  }
+}
+
+@mixin subtitle-font {
+  font-size: $subtitle-font-size;
+  font-weight: $subtitle-font-weight;
+  line-height: $subtitle-line-height;
+}
+
+@mixin paragraph-font {
+  font-size: $paragraph-font-size;
+  font-weight: $paragraph-font-weight;
+  line-height: $paragraph-line-height;
+  @include media-down(md) {
+    font-size: $paragraph-font-size-sm;
+  }
+}
+
+@mixin small-font {
+  font-size: $small-font-size;
+  color: $gray;
+}
+
+.title {
+  @include title-font;
 }
 
 .subtitle {
   @include subtitle-font;
 }
 
-.subtitle-medium {
-  @include subtitle-font-medium;
+.paragraph {
+  @include paragraph-font;
 }
 
-.subtitle-semibold {
-  @include subtitle-font-semibold;
+.small-text {
+  @include small-font;
 }

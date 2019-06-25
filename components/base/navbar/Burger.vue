@@ -4,10 +4,10 @@
       id="nav-toggle"
       v-model="burger"
       type="checkbox"
-      class="burger__checkbox"
+      class="checkbox"
     >
-    <label for="nav-toggle" class="burger__button">
-      <span class="burger__icon"/>
+    <label for="nav-toggle" class="button">
+      <span class="icon"/>
     </label>
   </div>
 </template>
@@ -30,62 +30,65 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
-.burger {
-  transform: rotate(90deg);
+  .burger {
+    transform: rotate(90deg);
 
-  &:hover {
-    .burger__icon::after {
-      width: 20px;
+    &:hover {
+      .icon::after {
+        width: 20px;
+      }
     }
   }
-  &__checkbox {
+
+  .checkbox {
     display: none;
 
-    &:checked + .burger__button .burger__icon::before {
+    &:checked + .button .icon::before {
       top: 0;
       transform: rotate(135deg);
     }
 
-    &:checked + .burger__button .burger__icon::after {
+    &:checked + .button .icon::after {
       top: 0;
       width: 20px;
       transform: rotate(-135deg);
     }
   }
 
-  &__icon {
+
+  .icon {
     position: relative;
+
     &::before,
     &::after {
       content: '';
       position: absolute;
       left: -10px;
-      transition: transform .3s;
       display: inline-block;
       height: 2px;
       background-color: currentColor;
       transition: $base-transition;
     }
+
     &::before {
       top: -4px;
       width: 20px;
     }
+
     &::after {
       top: 4px;
       width: 16px;
     }
   }
 
-  &__button {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+  .button {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
   }
-}
 </style>

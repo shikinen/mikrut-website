@@ -1,83 +1,37 @@
 <template>
-  <div class="button__wrapper">
-    <span :class="{ 'bigger-font': phoneBig }" class="button__phone">{{ phoneBig ? $t('general.phone-prefix') : $t('cta.call') }}</span>
-    <a
-      :class="{ 'button--small': small, 'bigger-font': phoneBig }"
-      class="button button--phone"
-      :href="`tel:${$t('general.phone-href')}`"
-    >
-      {{ phoneBig ? $t('general.phone-short') : $t('general.phone-full') }}
-    </a>
+  <a :href="'tel:' + $t('phone.href')" class="phone-button">
     <svg
-      width="24px"
-      height="9px"
-      viewBox="0 0 24 9"
-      version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="24"
+      height="24"
+      viewBox="0 0 24 26"
     >
-      <g
-        stroke="none"
-        stroke-width="1"
+      <path
         fill="none"
         fill-rule="evenodd"
+        stroke="#FFF"
+        stroke-linecap="round"
         stroke-linejoin="round"
-      >
-        <g
-          :class="{ 'button__arrow--black': black }"
-          class="button__arrow"
-          transform="translate(-647.000000, -7884.000000)"
-          stroke-width="1.5"
-        >
-          <g transform="translate(152.000000, 7431.000000)">
-            <g transform="translate(96.000000, 96.000000)">
-              <g transform="translate(270.000000, 304.000000)">
-                <g transform="translate(129.000000, 53.000000)">
-                  <path id="Path" d="M23.25,4.497 L0.75,4.497"/>
-                  <polyline id="Path" points="19.5 8.247 23.25 4.497 19.5 0.747"/>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
+        stroke-width="2"
+        d="M16.396 24.067l.014.01a6.007 6.007 0 0 0 7.419-.807l.833-.825a1.958 1.958 0 0 0 0-2.784l-3.515-3.477a1.998 1.998 0 0 0-2.811 0 2.002 2.002 0 0 1-2.81 0l-5.62-5.565a1.954 1.954 0 0 1 0-2.782 1.958 1.958 0 0 0 0-2.784L6.392 1.576a2.002 2.002 0 0 0-2.81 0l-.835.825a5.858 5.858 0 0 0-.813 7.345l.007.014a53.534 53.534 0 0 0 14.455 14.307z"
+      />
     </svg>
-  </div>
+  </a>
 </template>
 
-<script>
-export default {
-  props: {
-    text: {
-      type: String,
-      default: ''
-    },
-    phoneBig: {
-      type: Boolean,
-      default: false
-    },
-    small: {
-      type: Boolean,
-      default: false
-    },
-    black: {
-      type: Boolean,
-      default: false
-    },
-    inline: {
-      type: Boolean,
-      default: false
+<style lang="scss" scoped>
+  .phone-button {
+    @include center-content;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    background: $accent;
+    box-shadow: $accent-shadow-small;
+
+    &:hover {
+      @include media-up(sm) {
+        transform: scale(1.1);
+      }
     }
   }
-}
-</script>
-
-<style lang="scss" scoped>
-  .button {
-    @include button;
-  }
-
-.bigger-font {
-  font-size: 24px;
-}
 </style>
