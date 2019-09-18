@@ -31,7 +31,6 @@ export default {
   ** Router configuration
   */
   router: {
-    base: '/mikrut-website/',
     scrollBehavior (to) {
       if (to.hash && document.querySelector(to.hash)) {
         return window.scrollTo({ top: document.querySelector(to.hash).offsetTop + window.innerHeight, behavior: 'smooth' })
