@@ -98,7 +98,6 @@ export default {
     }
 
     &__navigation {
-      @include hide-down(md);
       position: relative;
       z-index: $navigation-index;
       margin-left: auto;

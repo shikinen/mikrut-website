@@ -38,6 +38,7 @@ export default {
 
 <style lang="scss" scoped>
   .navigation {
+    @include hide-down(md);
     display: flex;
     align-items: center;
     font-size: 16px;

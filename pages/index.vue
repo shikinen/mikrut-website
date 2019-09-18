@@ -94,14 +94,24 @@ export default {
     .title {
       position: absolute;
       z-index: 1;
-      left: 0;
+      left: 50%;
       top: 50%;
-      transform: translateY(-50%);
-      font-size: 32px;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
       text-transform: uppercase;
       transition: $base-transition;
 
       @include media-up(sm) {
+        left: 0;
+        transform: translateY(-50%);
+        width: auto;
+        font-size: 40px;
+        text-align: left;
+      }
+
+      @include media-up(md) {
         font-size: 48px;
       }
     }
@@ -130,7 +140,9 @@ export default {
       }
 
       .title {
-        transform: translateX(32px) translateY(-50%);
+        @include media-up(sm) {
+          transform: translateX(32px) translateY(-50%);
+        }
       }
 
       &::after {
