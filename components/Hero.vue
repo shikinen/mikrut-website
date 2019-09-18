@@ -8,9 +8,6 @@
           class="heading"
           v-html="$t('hero.heading')"
         />
-        <!--        <div class="hero-logo">-->
-        <!--          <logo/>-->
-        <!--        </div>-->
       </div>
       <h2 class="subheading">
         bezpiecznie, dyskretnie, legalnie
@@ -20,6 +17,7 @@
       </h2>
     </div>
     <video
+      :class="{ faded: scrollPosition > 1100 }"
       class="hero__video"
       src="/video/hero.mp4"
       autoplay
@@ -30,6 +28,27 @@
     <div class="hero__video-overlay"/>
   </section>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      scrollPosition: 0
+    }
+  },
+  mounted () {
+    const scrollHandler = () => {
+      this.scrollPosition = window.scrollY
+    }
+
+    window.addEventListener('scroll', scrollHandler)
+
+    this.$once('hook:beforeDestroy', () => {
+      window.removeEventListener('scroll', scrollHandler)
+    })
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 $video-index: 1;
@@ -55,6 +74,11 @@ $content-index: 3;
     min-height: 100%;
     min-width: 100%;
     object-fit: cover;
+    transition: $base-transition;
+
+    &.faded {
+      opacity: 0
+    }
   }
 
   &__video-overlay {
