@@ -20,7 +20,7 @@
             {{ service.title }}
           </h2>
           <img class="image" :src="`/img/${service.id}.jpg`" :alt="service.title">
-          <div class="overlay"/>
+          <div class="overlay" />
         </nuxt-link>
       </div>
     </main>
