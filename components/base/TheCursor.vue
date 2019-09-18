@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="cursor-wrap">
+  <div v-if="$device.isDesktop" class="cursor-wrap">
     <div ref="cursor" class="cursor"/>
   </div>
 </template>
@@ -15,6 +15,8 @@ export default {
     }
   },
   mounted () {
+    if (this.$device.isMobile) return
+
     const move = throttle(e => {
       // Move cursor
       this.x = e.clientX - 84
