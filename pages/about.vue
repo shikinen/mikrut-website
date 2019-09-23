@@ -11,6 +11,27 @@
   </main>
 </template>
 
+<script>
+export default {
+  head () {
+    return {
+      meta: [
+        {
+          hid: 'title',
+          meta: 'title',
+          content: 'Doświadczony prywatny detektyw Kamil Mikrut'
+        },
+        {
+          hid: 'description',
+          meta: 'description',
+          content: 'Doświadczony prywatny detektyw Kamil Mikrut – usługi detektywwistyczne na terenie całej Polski – Warszawa, Łódź, Gdańsk, Kraków, Katowwice, Wrocław, Poznań '
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 
   .main {

@@ -26,9 +26,34 @@ import Accordion from '@/components/service/Accordion'
 
 export default {
   components: { Accordion, PageTitle },
+  head () {
+    return {
+      meta: [
+        {
+          hid: 'title',
+          meta: 'title',
+          content: 'Agencja detektywistyczna, prywatny detektyw - usługi z zakresu' + this.service.title
+        },
+        {
+          hid: 'description',
+          meta: 'description',
+          content: 'Usługi detektywistyczne – ' + this.titles
+        }
+      ]
+    }
+  },
   data () {
     return {
       service: services.find(service => service.id === this.$route.params.service)
+    }
+  },
+  computed: {
+    titles () {
+      if (this.service.items) {
+        const titles = this.service.items.map(item => item.title)
+        return titles.join(',')
+      }
+      return 'Warszawa, Łódź, Kraków, Katowice, Trójmiasto'
     }
   },
   validate ({ params }) {

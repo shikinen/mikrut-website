@@ -8,14 +8,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Detektyw Kamil Mikrut – Agencja Detektywistyczna Warszawa',
+    title: 'Detektyw Kamil Mikrut – Agencja Detektywistyczna Warszawa Kraków Katowice Poznań Gdańsk Wrocław Łódź',
     htmlAttrs: {
       lang: 'pl-PL'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Detektyw Kamil Mikrut – Agencja detektywistyczna świadcząca usługi detektywistyczne – zdrada, śledztwo, ochrona, dzieci' }
+      { hid: 'description', name: 'description', content: 'Detektyw Kamil Mikrut – Agencja  świadcząca usługi detektywistyczne – zdrada i rozwód, alimenty i kontrola opieki nad dziećmi, sprawdzenia pracownicze' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
