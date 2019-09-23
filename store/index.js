@@ -1,6 +1,7 @@
 const state = () => ({
   isMenuVisible: false,
-  isMobileMenuVisible: false
+  isMobileMenuVisible: false,
+  pageLoaded: false
 })
 
 const mutations = {
@@ -15,6 +16,9 @@ const mutations = {
   },
   closeMobileMenu (state) {
     state.isMobileMenuVisible = false
+  },
+  setPageLoaded (state, value) {
+    state.pageLoaded = value
   }
 }
 

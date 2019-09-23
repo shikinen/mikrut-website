@@ -33,6 +33,16 @@ import Hero from '@/components/Hero'
 export default {
   components: {
     Hero
+  },
+  computed: {
+    pageLoaded: {
+      get () {
+        return this.$store.state.pageLoaded
+      },
+      set (value) {
+        this.$store.commit('setPageLoaded', value)
+      }
+    }
   }
 }
 </script>

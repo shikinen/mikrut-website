@@ -24,6 +24,7 @@
       playsinline
       muted
       loop
+      @canplay="$store.commit('setPageLoaded', true)"
     />
     <div class="hero__video-overlay"/>
   </section>
