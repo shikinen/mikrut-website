@@ -15,7 +15,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Detektyw Kamil Mikrut – Agencja  świadcząca usługi detektywistyczne – zdrada i rozwód, alimenty i kontrola opieki nad dziećmi, sprawdzenia pracownicze' }
+      { hid: 'description', name: 'description', content: 'Detektyw Kamil Mikrut – Agencja  świadcząca usługi detektywistyczne – zdrada i rozwód, alimenty i kontrola opieki nad dziećmi, sprawdzenia pracownicze' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Detektyw Mikrut' },
+      { hid: 'og:url', property: 'og:url', content: 'https://detektywmikrut.pl/' },
+      { hid: 'og:title', property: 'og:title', content: 'Detektyw Kamil Mikrut – bezpiecznie, dyskretnie, legalnie ' },
+      { hid: 'og:image', property: 'og:image', content: 'https://detektywmikrut.pl/img/og-image.jpg' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },

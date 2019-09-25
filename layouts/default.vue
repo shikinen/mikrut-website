@@ -23,6 +23,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  page-enter-active, .page-leave-active {
+    transition: all .30s ease-out;
+  }
+  .page-enter, .page-leave-active {
+    opacity: 0;
+    transform-origin: 50% 50%;
+  }
+
  .page-wrapper {
    height: 100vh;
    display: flex;
